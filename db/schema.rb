@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210617055142) do
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "coustomer_id"
@@ -53,6 +59,7 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "type_id"
@@ -68,6 +75,28 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.integer  "item_id"
+    t.integer  "tax_price"
+    t.integer  "quantity"
+    t.integer  "product_status"
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "pay_method"
+    t.integer  "order_status"
+    t.integer  "fare"
+    t.integer  "total_money"
+    t.string   "zip_code"
+    t.string   "address"
+    t.string   "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
