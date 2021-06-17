@@ -59,6 +59,24 @@
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "type_id"
+    t.string   "image_id"
+    t.text     "body"
+    t.integer  "price"
+    t.boolean  "is_active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.datetime "created_at",     null: false
     t.integer  "item_id"
@@ -80,3 +98,5 @@
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+end
