@@ -10,13 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-  create_table "cart_items", force: :cascade do |t|
-    t.integer  "customer_id"
-    t.integer  "item_id"
-    t.integer  "quantity"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
+  
+ActiveRecord::Schema.define(version: 20210617055142) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "coustomer_id"
@@ -38,6 +33,7 @@
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
+
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -69,6 +65,14 @@
     t.boolean  "is_active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+  
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "types", force: :cascade do |t|
