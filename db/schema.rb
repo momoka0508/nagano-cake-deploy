@@ -10,6 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20210617044828) do
+=======
 ActiveRecord::Schema.define(version: 20210617055142) do
 
   create_table "addresses", force: :cascade do |t|
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
+>>>>>>> 78a580c08e3681b68d6bd8a72b228c51834cd159
 
   create_table "customers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -51,6 +55,28 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.boolean  "is_deleted"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.datetime "created_at",     null: false
+    t.integer  "item_id"
+    t.integer  "tax_price"
+    t.integer  "quantity"
+    t.integer  "product_status"
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "customer_id"
+    t.integer  "pay_method"
+    t.integer  "order_status"
+    t.integer  "fare"
+    t.integer  "total_money"
+    t.string   "zip_code"
+    t.string   "address"
+    t.string   "name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
