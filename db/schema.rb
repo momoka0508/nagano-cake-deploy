@@ -9,18 +9,12 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20210617050240) do
-
   create_table "cart_items", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "item_id"
     t.integer  "quantity"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-=======
-ActiveRecord::Schema.define(version: 20210617055142) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "coustomer_id"
@@ -41,7 +35,6 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
->>>>>>> 78a580c08e3681b68d6bd8a72b228c51834cd159
   end
 
   create_table "customers", force: :cascade do |t|
@@ -76,5 +69,3 @@ ActiveRecord::Schema.define(version: 20210617055142) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-end
