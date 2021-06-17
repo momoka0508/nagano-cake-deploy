@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   scope module: 'public' do
     resource :customers do
       get 'my_page' => 'customers#show'
+      get 'confirm'
     end
     resources :addresses
     resources :orders, only:[:new, :create, :index, :show]
