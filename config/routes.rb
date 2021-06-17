@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get '/home/about' => 'homes#about'
   
   scope module: 'public' do
-    resource :customers
+    resource :customers do
+      get 'my_page' => 'customers#show'
+    end
     resources :orders, only:[:new, :create, :index, :show]
     resources :cart_items, only:[:index, :update, :create, :destroy]
     resources :items, only:[:index, :show]
