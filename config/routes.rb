@@ -18,11 +18,11 @@ Rails.application.routes.draw do
     get "orders/complete" => "orders#complete"
     delete "cart_items" => "cart_items#destroy_all"
   end
-
+  
   devise_for :admins, only: [:sessions], :controllers => {
     :sessions => 'admin/sessions'
   }
-
+  
   namespace :admin do
     resources :customers
     resources :items, except: [:edit]
