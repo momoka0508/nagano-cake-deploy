@@ -6,11 +6,14 @@
   get '/home/about' => 'homes#about'
 
   scope module: 'public' do
-    devise_for :customers, only: [:sessions, :registrations]
+    
     resource :customers do
       get 'my_page' => 'customers#show'
       get 'confirm'
     end
+    #下記の文が上記のresource :customers doよりも上にあるとcustomersコントローラーがうまく呼び出されない
+    devise_for :customers, only: [:sessions, :registrations]
+    
     resources :addresses
     resources :orders, only:[:new, :create, :index, :show]
     resources :cart_items, only:[:index, :update, :create, :destroy]
