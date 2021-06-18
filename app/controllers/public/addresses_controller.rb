@@ -16,4 +16,10 @@ class Public::AddressesController < ApplicationController
     end
   end
   
+  private
+  
+  def address_params
+    params.require(:address).permit(:zip_code, :address, :name)
+  end
+  
 end
