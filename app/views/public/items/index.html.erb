@@ -8,6 +8,16 @@
       <% end %>
     </p>
     <p><%= item.name %></p>
-    <p><%= item.price %></p>
+    <p>
+      <%= item.price %>
+      円
+    </p>
+    <p>
+      <% if item.is_active == true %>
+        販売中
+      <% elsif item.is_active == false %>
+        販売停止中
+      <% end %>
+    </p>
   <% end %>
 </div>

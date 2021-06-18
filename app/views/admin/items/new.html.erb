@@ -13,11 +13,17 @@
   <h4>ジャンル</h4>
   <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: "選択して下さい" %>
   
-  <h4>商品説明</h4>
+  <h4>価格</h4>
   <%= f.text_field :price %>
   
-  ステータス
-
-  <%= f.submit '投稿' %>
+  <h4>ステータス</h4>
+  <%= f.radio_button :is_active, true %>
+  <%= f.label :is_active, "販売中", value: true %>
+  <%= f.radio_button :is_active, false %>
+  <%= f.label :is_active, "販売停止中", value: false %>
+  
+  <div>
+    <%= f.submit '投稿' %>
+  </div>
 
 <% end %>

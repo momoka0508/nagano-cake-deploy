@@ -19,7 +19,10 @@
             <%= item.name %>
           <% end %>
         </td>
-        <td><%= item.price %></td>
+        <td>
+          <%= item.price %>
+          円
+        </td>
         <td><%= item.type.name %></td>
         <td>
           <% if item.is_active == true %>
