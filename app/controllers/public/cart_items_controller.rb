@@ -3,7 +3,7 @@ class Public::CartItemsController < ApplicationController
 	def index
 		@item=Item.find_by(params[:id],params[:item_id])
 		@cart_items=CartItem.all
-		@cart_item=CartItem.find(params[:quantity])
+
 	end
 
 	def update
@@ -21,7 +21,7 @@ class Public::CartItemsController < ApplicationController
 
 	def destroy_all
 	end
-	
+
 private
 
 def cart_item_params
