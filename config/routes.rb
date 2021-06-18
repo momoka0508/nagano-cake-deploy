@@ -6,7 +6,7 @@
   get '/home/about' => 'homes#about'
 
   scope module: 'public' do
-    devise_for :customers, only: [:sessions, :registration]
+    devise_for :customers, only: [:sessions, :registrations]
     resource :customers do
       get 'my_page' => 'customers#show'
       get 'confirm'
