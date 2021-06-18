@@ -17,7 +17,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          
+
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if customer_signed_in? %>
@@ -38,10 +38,19 @@
             　<li><%= link_to "ログイン",new_customer_session_path,class: "nav-link" %></li>
             <% end %>
           </div>
-          
+
         </div>
       </nav>
     </header>
+
     <%= yield %>
+
+    <footer class="footer text-white bg-dark">
+      <div class="row">
+        <div class="offset-8 mt-3">
+          <p>©CopyRight TyanTyans.inc</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
