@@ -19,8 +19,9 @@ Rails.application.routes.draw do
     delete "cart_items" => "cart_items#destroy_all"
   end
   
-  devise_for :admins
-  
+  devise_for :admins, only: [:sessions], controllers: {
+    sessions: 'admin/sessions'
+  }
   
   namespace :admin do
     resources :customers
