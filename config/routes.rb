@@ -1,5 +1,4 @@
-
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to:'homes#top'
@@ -23,7 +22,7 @@
   devise_for :admins, only: [:sessions], :controllers => {
     :sessions => 'admin/sessions'
   }
-
+  
   namespace :admin do
     resources :customers
     resources :items, except: [:edit]
