@@ -7,7 +7,7 @@
   <%= form_with model: @customer, url: admin_customer_path, local:true do |f| %>
     <div class="form-group">
       <%= f.label :id, "会員ID" %>
-      <%= f.label :id @customer.id %>
+      <%= f.label :id, @customer.id %>
     </div>
     <div class="form-group">
       <%= f.label :first_name, "氏名" %>
@@ -41,5 +41,7 @@
     <div class="form-group">
       <%= f.submit "変更を保存" %>
     </div>
+    
   <% end %>
+  
 </div>
