@@ -10,6 +10,7 @@
     resource :customers do
       get 'my_page' => 'customers#show'
       get 'confirm'
+      patch 'withdrawal'
     end
     #下記の文が上記のresource :customers doよりも上にあるとcustomersコントローラーがうまく呼び出されない
     devise_for :customers, only: [:sessions, :registrations]
