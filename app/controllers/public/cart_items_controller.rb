@@ -3,12 +3,11 @@ class Public::CartItemsController < ApplicationController
 	before_action :setup_cart_item!, only: [:update, :create, :destroy, :destroy_all]
 
 	def index
-		@cart_items=current_cart
+		@cart_items=CartItem.all
 	end
 
 	def create
 		@cart_item=CartItem.new(cart_item_params)
-		@cart_item.customer_id = current_user.id
 		@cart_item.save
 		redirect_to cart_items_path
 	end
@@ -33,7 +32,7 @@ def setup_cart_item!
 end
 
 def cart_item_params
-	params.require(:cart_item).permit(:quantity)
+	params.require(:cart_item).permit(:quantity, :customer_id, :item_id)
 end
 
 end

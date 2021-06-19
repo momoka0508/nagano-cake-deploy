@@ -4,11 +4,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart
 
   def current_cart
-  	if session[:cart_id]
-  		@cart_item = CartItem.find(session[:cart_id])
-  	else
-  		@cart_item = CartItem.create
-  		session[:cart_id] = @cart_item.id
-  	end
+  	current_cart = current_customer.cart_items
+  	current_cart = CartItem.find_by(id: session[:cart_id]) || CartItem.create
+  	session[:cart_id] ||= current_cart.id
   end
+
 end

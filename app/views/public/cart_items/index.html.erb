@@ -14,10 +14,9 @@
 	</thead>
 	<tbody>
 		<tr>
-			<% @sum = 0 %>
 			<% @cart_items.each do |cart_item| %>
 				<td>
-					<%= cart_item.name %>
+					<%= cart_item.item.name %>
 				</td>
 				<td>
 					<%= cart_item.tax_price %>
@@ -29,12 +28,11 @@
 					<% end %>
 				</td>
 				<td>
-					<%= tax_price * cart_item.quantity %>
+
 				</td>
 				<td>
-					<%= link_to "削除する", cart_item_path, class: "btn btn-danger", method: :delete %>
+					<%= link_to "削除する", cart_item_path(cart_item.item_id), class: "btn btn-danger", method: :delete %>
 				</td>
-				<% @sum += tax_price * cart_item.quantity %>
 			<% end %>
 		</tr>
 	</tbody>
