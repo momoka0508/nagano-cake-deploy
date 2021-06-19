@@ -1,0 +1,7 @@
+<h2>いちごのショートケーキ(ホール)</h2>
+<p>栃木県産のとちおとめを贅沢に使用しています。</p>
+<p>¥2750(税込)</p>
+<%= form_with model: @cart_item, local: true do |f| %>
+	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
+<%= f.submit "カートに入れる", class: "btn btn-success" %>
+<% end %>
