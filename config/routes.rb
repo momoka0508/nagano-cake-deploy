@@ -27,7 +27,7 @@
   devise_for :admins, only: [:sessions], :controllers => {
     :sessions => 'admin/sessions'
   }
-
+  
   namespace :admin do
     resources :customers
     resources :items, except: [:edit]
