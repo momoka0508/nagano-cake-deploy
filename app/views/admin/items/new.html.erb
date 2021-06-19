@@ -1,29 +1,43 @@
 <!-- form_with部分 -->
 <%= form_with model:@item, url: admin_items_path, local:true do |f| %>
   
-  <h4>商品画像</h4>
-  <%= f.attachment_field :image %>
-  
-  <h4>商品名</h4>
-  <%= f.text_field :name %>
+  <div>
+    <h4>商品画像</h4>
+    <%= f.attachment_field :image %>
+  </div>
 
-  <h4>商品説明</h4>
-  <%= f.text_area :body %>
-  
-  <h4>ジャンル</h4>
-  <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: "選択して下さい" %>
-  
-  <h4>価格</h4>
-  <%= f.text_field :price %>
-  
-  <h4>ステータス</h4>
-  <%= f.radio_button :is_active, true %>
-  <%= f.label :is_active, "販売中", value: true %>
-  <%= f.radio_button :is_active, false %>
-  <%= f.label :is_active, "販売停止中", value: false %>
+  <div>
+    <h4>商品名</h4>
+    <%= f.text_field :name %>  
+  </div>
+
+  <div>
+    <h4>商品説明</h4>
+    <%= f.text_area :body %>
+  </div>
   
   <div>
-    <%= f.submit '投稿' %>
+    <h4>ジャンル</h4>
+    <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: "選択して下さい" %>
+  </div>
+  
+  <div>
+    <h4>価格</h4>
+    <%= f.text_field :price %>
+  </div>
+  
+  
+  <div>
+    <%= f.radio_button :is_active, true %>
+    <%= f.label :is_active, "販売中", value: true %>
+    <%= f.radio_button :is_active, false %>
+    <%= f.label :is_active, "販売停止中", value: false %>
+  </div>
+  <h4>ステータス</h4>
+  
+  
+  <div>
+    <%= f.submit '新規登録' %>
   </div>
 
 <% end %>
