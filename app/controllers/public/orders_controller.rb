@@ -1,13 +1,19 @@
 class Public::OrdersController < ApplicationController
+
 	def new
-	end
-	
-	def thanks
+		@order=Order.new
 	end
 
 	def create
+		order=Order.new(order_params)
+		order.save
+		redirect_to orders_thanks_path
 	end
-	
+
+	def thanks
+		@cart_items=CartItem.all
+	end
+
 	def complete
 	end
 
@@ -16,5 +22,11 @@ class Public::OrdersController < ApplicationController
 
 	def show
 	end
+
+private
+
+def order_params
+	params.require(:order).permit(:pay_method, :zip_code, :address, :name)
+end
 
 end
