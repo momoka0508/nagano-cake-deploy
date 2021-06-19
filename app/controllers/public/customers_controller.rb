@@ -16,8 +16,6 @@ class Public::CustomersController < ApplicationController
       render :edit
     end
   end
-  
-  def 
 
   private
 
