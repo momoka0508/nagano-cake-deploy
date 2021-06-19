@@ -5,6 +5,7 @@ class Admin::TypesController < ApplicationController
   end
 
   def edit
+    @type = Type.find(params[:id])
   end
 
   def create
@@ -13,7 +14,15 @@ class Admin::TypesController < ApplicationController
     redirect_to admin_types_path
   end
   
+  def update
+    @type = Type.find(params[:id])
+    @type.update(type_params)
+    redirect_to admin_types_path
+  end
+  
+  
   private
+  
   def type_params
     params.require(:type).permit(:name)
   end
