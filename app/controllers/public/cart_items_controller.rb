@@ -1,9 +1,10 @@
 class Public::CartItemsController < ApplicationController
 
+	before_action :setup_cart_item!, only: [:update, :create, :destroy, :destroy_all]
+
 	def index
 		@item=Item.find_by(params[:id],params[:item_id])
-		@cart_items=CartItem.all
-
+		@cart_items=current_cart.cart_items
 	end
 
 	def update
@@ -13,6 +14,9 @@ class Public::CartItemsController < ApplicationController
 	end
 
 	def create
+		cart_item=CartItem.new(cart_item_params)
+		cart_item.save
+		redirect_to cart_items_path
 	end
 
 	def destroy

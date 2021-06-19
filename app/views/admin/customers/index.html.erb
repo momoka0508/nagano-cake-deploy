@@ -1,9 +1,9 @@
 <div class="container">
-  
+
   <h2>会員一覧</h2>
-  
+
   <table>
-    
+
     <thead>
       <tr>
         <th>会員ID</th>
@@ -12,7 +12,7 @@
         <th>ステータス</th>
       </tr>
     </thead>
-    
+
     <tbody>
       <% @customers.each do |customer| %>
         <tr>
@@ -26,12 +26,16 @@
             <%= customer.email %>
           </td>
           <td>
-            <%= メンテナンス中 %>
+            <% if customer.is_deleted %>
+              <span>退会</span>
+            <% else %>
+              <span>有効</span>
+            <% end %>
           </td>
         </tr>
       <% end %>
     </tbody>
-  
+
   </table>
 
 </div>
