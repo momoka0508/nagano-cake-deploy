@@ -16,6 +16,13 @@ class Public::CustomersController < ApplicationController
       render :edit
     end
   end
+  
+  def withdrawal
+    @customer = current_customer
+    @customer.update(is_deleted: true)
+    reset_session
+    redirect_to root_path, alert: "退会しました"
+  end
 
   private
 
