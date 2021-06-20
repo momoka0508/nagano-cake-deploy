@@ -26,13 +26,13 @@ class Public::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-    @item_orders = @order.item_orders
+    @order_items = @order.order_items
 	end
 
 private
 
-	def order_params
-		params.require(:order).permit(:pay_method, :zip_code, :address, :name)
-	end
+def order_params
+	params.require(:order).permit(:pay_method, :zip_code, :address, :name)
+end
 
 end
