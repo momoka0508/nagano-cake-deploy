@@ -33,7 +33,7 @@
   
   namespace :admin do
     resources :customers
-    resources :items, except: [:edit]
+    resources :items
     resources :types, only:[:index, :update, :create, :edit]
     resources :orders, only:[:index, :show]
   end
