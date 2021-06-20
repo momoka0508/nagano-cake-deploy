@@ -1,58 +1,64 @@
 <div class="container">
-  
-  <h2 class="mb-4">新規会員登録</h2>
 
-    <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
-      
-      <div class="form-group">
-        <%= f.label "名前" %>
-          <%= f.text_field :last_name, autofocus: true %>
-          <%= f.text_field :first_name, autofocus: true %>
-      </div>
+    <h2 class="mt-4 mb-5 ml-5">新規会員登録</h2>
 
-      <div class="form-group">
-        <%= f.label :last_name_kana, "フリガナ" %>
-          <%= f.text_field :last_name_kana, autofocus: true %>
-          <%= f.text_field :first_name_kana, autofocus: true %>
-      </div>
+      <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
 
-      <div class="form-group">
-        <%= f.label :email, "メールアドレス" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+        <div class="form-group row">
+          <%= f.label "名前", class: "col-md-4" %>
+          <span>(姓)</span>
+          <%= f.text_field :last_name, autofocus: true, placeholder: "令和" %>
+          <span>(名)</span>
+          <%= f.text_field :first_name, autofocus: true, placeholder: "道子" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :zip_code, "郵便番号（ハイフンなし）" %>
-          <%= f.text_field :zip_code, autofocus: true %>
-      </div>
+        <div class="form-group row">
+          <%= f.label :last_name_kana, "フリガナ", class: "col-md-4" %>
+          <span>(セイ)</span>
+          <%= f.text_field :last_name_kana, autofocus: true, placeholder: "レイワ" %>
+          <span>(メイ)</span>
+          <%= f.text_field :first_name_kana, autofocus: true, placeholder: "ミチコ" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :address, "住所" %>
-          <%= f.text_area :address, autofocus: true %>
-      </div>
-        
-      <div class="form-group row">
-        <%= f.label :phone_number, "電話番号（ハイフンなし）" %>
-          <%= f.text_field :phone_number, autofocus: true %>
-      </div>
+        <div class="form-group row text-align:center">
+          <%= f.label :email, "メールアドレス", class: "col-md-4" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "col-md-2" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :password, "パスワード（６文字以上）" %>
-          <%= f.password_field :password, autocomplete: "new-password" %>
-      </div>
+        <div class="form-group row">
+          <%= f.label :zip_code, "郵便番号（ハイフンなし）", class: "col-md-4" %>
+          <%= f.text_field :zip_code, autofocus: true, placeholder: "0000000", class: "col-md-2" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.label :password_confirmation, "パスワード（確認用）" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-      </div>
+        <div class="form-group row">
+          <%= f.label :address, "住所", class: "col-md-4" %>
+          <%= f.text_field :address, autofocus: true, placeholder: "東京都渋谷区代々木神園町0-0", class: "col-md-5" %>
+        </div>
 
-      <div class="form-group">
-        <%= f.submit "新規登録" %>
-      </div>
-      
-    <% end %>
+        <div class="form-group row">
+          <%= f.label :phone_number, "電話番号（ハイフンなし）", class: "col-md-4" %>
+          <%= f.text_field :phone_number, autofocus: true, placeholder: "0000000000", class: "col-md-2" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password, "パスワード（６文字以上）", class: "col-md-4" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "col-md-2" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password_confirmation, "パスワード（確認用）", class: "col-md-4" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "col-md-2" %>
+        </div>
+
+        <div class="form-group row">
+          <%= f.submit "新規登録", class: "col-md-2 offset-md-4" %>
+        </div>
+
+      <% end %>
 
     <h4>既に登録済みの方</h4>
-    <p><%= link_to "こちら", new_customer_session_path %> からログインしてください。</p>
-    
+    <p class="ml-5">
+      <%= link_to "こちら", new_customer_session_path %> からログインしてください。
+    </p>
+
 </div>

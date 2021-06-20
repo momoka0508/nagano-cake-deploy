@@ -1,9 +1,8 @@
 class Public::AddressesController < ApplicationController
-  before_actionauthenticate_customer!
   
   def index
     @address = Address.new
-    @addresses = Address.where(customer_id: current_customer.id)
+    @addresses = Address.where(customer: current_customer)
   end
   
   def create
