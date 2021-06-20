@@ -16,7 +16,12 @@
         <tbody>
           <tr>
             <td>購入者</td>
-            <td></td>
+            <td>
+              <%= link_to admins_user_path(@order.id) do %>
+                <%= order.user.last_name %>
+                <%= order.user.first_name %>
+              <% end %>
+            </td>
           </tr>
           <tr>
             <td>注文日</td>
@@ -28,11 +33,14 @@
           </tr>
           <tr>
             <td>支払方法</td>
-            <td></td>
+            <td><%= order.pay_method %></td>
           </tr>
           <tr>
             <td>注文ステータス</td>
-            <td></td>
+            <td>
+              
+              <%= f.submit "更新", class: "btn btn-primary btn-sm" %>
+            </td>
           </tr>
         </tbody>
 
