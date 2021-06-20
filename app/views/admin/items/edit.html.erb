@@ -1,16 +1,16 @@
 <!-- form_with部分 -->
-<%= form_with model:@item, url: admin_items_path, local:true do |f| %>
+<%= form_with model:@item, url:admin_item_path,  local:true do |f| %>
   
   <div>
     <h4>商品画像</h4>
     <%= f.attachment_field :image %>
   </div>
-
+  
   <div>
     <h4>商品名</h4>
     <%= f.text_field :name %>  
   </div>
-
+  
   <div>
     <h4>商品説明</h4>
     <%= f.text_area :body %>
@@ -26,7 +26,6 @@
     <%= f.text_field :price %>
   </div>
   
-  
   <div>
     <h4>ステータス</h4>
     <%= f.radio_button :is_active, true %>
@@ -35,10 +34,8 @@
     <%= f.label :is_active, "販売停止中", value: false %>
   </div>
   
-  
-  
   <div>
-    <%= f.submit '新規登録' %>
+    <%= f.submit '編集完了', class:"btn btn-success" %>
   </div>
 
 <% end %>

@@ -1,25 +1,33 @@
-<h2>ジャンル一覧</h2>
-<!-- form_with部分 -->
-<%= form_with model:@type, url: admin_types_path, local:true do |f| %>
-
-  <h4>ジャンル名</h4>
-  <%= f.text_field :name %>
-  
-  <%= f.submit '新規登録' %>
-  
-<% end %>
-
-<table>
-  <thead>
-    <th>ジャンル</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% @types.each do |type| %>
-      <tr>
-        <td><%= type.name %></td>
-        <td><%= link_to "編集する", edit_admin_type_path(type.id), class: "btn btn-success" %></td>
-      </tr>
+<div class="container my-5">
+  <div class="row">
+    <h3 class="order-text">
+      ジャンル一覧
+    </h3>
+    <!-- form_with部分 -->
+    <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
+    
+      <h6>ジャンル名</h6>
+      <%= f.text_field :name %>
+      
+      <%= f.submit '新規登録' %>
+      
     <% end %>
-  </tbody>
-</table>
+  </div>
+  
+  <div class="row mt-5">  
+    <table class="table table-striped">
+      <thead>
+        <th>ジャンル</th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @types.each do |type| %>
+          <tr>
+            <td><%= type.name %></td>
+            <td><%= link_to "編集する", edit_admin_type_path(type.id), class: "btn btn-success" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
