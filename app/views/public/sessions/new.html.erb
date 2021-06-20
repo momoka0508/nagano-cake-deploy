@@ -1,27 +1,49 @@
 <div class="container">
-  
-  <h2>ログイン</h2>
-  <h4>会員の方はこちらからログイン</h4>
-  
-  <%= form_with model: @customer, url: customer_session_path do |f| %>
-  
-    <div class="form-group">
-      <%= f.label :email, "メールアドレス" %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+  <div class="row">
+
+    <div class="col-10 mx-auto">
+
+      <h2 class="mt-4 mb-4 ml-n4">ログイン</h2>
+      <h4 class="mb-3">会員の方はこちらからログイン</h4>
+
+      <%= form_with model: @customer, url: customer_session_path, class: "pl-4" do |f| %>
+
+        <div class="form-group row">
+          <%= f.label :email, "メールアドレス", class: "col-4" %>
+          <div class="col-8">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email",
+            placeholder: "simple@example.com", class: "col-8" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <%= f.label :password, "パスワード", class: "col-4" %>
+          <div class="col-8">
+            <%= f.password_field :password, autocomplete: "current_password",
+            class: "col-8"%>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="offset-4 col-2">
+            <%= f.submit "ログイン", class: "col-12 btn btn-primary" %>
+          </div>
+        </div>
+
+      <% end %>
+
+      <h4 class="mt-4">会員登録がお済みでない方</h4>
+      <p class="ml-5 pl-5 my-3">
+        <u>
+          <%= link_to "こちら", new_customer_registration_path %>
+        </u>
+        から新規登録を行ってください。
+      </p>
+
     </div>
-    
-    <div class="form-group">
-      <%= f.label :password, "パスワード" %>
-        <%= f.password_field :password, autocomplete: "current_password" %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.submit "ログイン" %>
-    </div>
-    
-  <% end %>
-  
-  <h4>会員登録がお済みでない方</h4>
-  <p><%= link_to "こちら", new_customer_registration_path %>から新規登録を行ってください。</p>
-  
+
+  </div>
+
+
 </div>
