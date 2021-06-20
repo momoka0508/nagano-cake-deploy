@@ -25,7 +25,7 @@
       <tbody>
         <% @orders.each do |order| %>
         <tr>
-          <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+          <td><%= order.created_at.strftime('%Y年/%m月/%d日') %></td>
           <td></td>
           <td></td>
           <td><%= order.total_money %></td>
