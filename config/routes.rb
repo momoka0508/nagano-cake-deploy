@@ -6,13 +6,16 @@
   get '/home/about' => 'homes#about'
 
   scope module: 'public' do
-
-    resource :customers do
+    
+    #onlyでアクションを指定してやらないとユーザー登録・ログイン時にcustomersコントローラーが呼び出されてしまう
+    resource :customers, only: [:edit, :update] do 
       get 'my_page' => 'customers#show'
       get 'confirm'
       patch 'withdrawal'
     end
+    
     #下記の文が上記のresource :customers doよりも上にあるとcustomersコントローラーがうまく呼び出されない
+    #下記のコードがユーザー登録・ログインで使いたいコントローラー
     devise_for :customers, only: [:sessions, :registrations]
 
     resources :addresses
