@@ -1,10 +1,9 @@
-<div id="container">
-  <div class="row">
-    <div class="col-lg-3 mx-auto"></div>
-    <div class="col-md-3 mx-auto">
+<div>
+  <div class="show_item_box">
+    <div>
       <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300" %>
     </div>
-    <div class="col-md-3 mx-auto">
+    <div>
       <p><%= @item.name %></p>
       <p><%= @item.body %></p>
       <p>¥ <%= (@item.price.to_i * 1.1).floor %>（税込）</p>
@@ -13,7 +12,5 @@
         <%= f.submit "カートに入れる", class: "btn btn-success" %>
       <% end %>
     </div>
-    <div class="col-md-3 mx-auto"></div>
   </div>
 </div>
-
