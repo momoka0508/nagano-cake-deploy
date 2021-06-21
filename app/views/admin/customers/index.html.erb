@@ -1,41 +1,57 @@
 <div class="container">
 
-  <h2>会員一覧</h2>
+  <div class="row mb-4">
 
-  <table>
+    <div class="col-12">
 
-    <thead>
-      <tr>
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>メールアドレス</th>
-        <th>ステータス</th>
-      </tr>
-    </thead>
+      <h2 class="mt-4 mb-3">会員一覧</h2>
 
-    <tbody>
-      <% @customers.each do |customer| %>
-        <tr>
-          <td><%= customer.id %></th>
-          <td>
-            <%= link_to admin_customer_path(customer) do %>
-              <%= customer.last_name + customer.first_name %>
-            <% end %>
-          </td>
-          <td>
-            <%= customer.email %>
-          </td>
-          <td>
-            <% if customer.is_deleted %>
-              <span>退会</span>
-            <% else %>
-              <span>有効</span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
+      <div class="row">
 
-  </table>
+        <div class="col-10 mx-auto">
+
+          <table class="table">
+
+            <thead class="thead-light">
+              <tr>
+                <th>会員ID</th>
+                <th>氏名</th>
+                <th>メールアドレス</th>
+                <th>ステータス</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @customers.each do |customer| %>
+                <tr>
+                  <td><%= customer.id %></th>
+                  <td>
+                    <%= link_to admin_customer_path(customer) do %>
+                      <%= customer.last_name + customer.first_name %>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= customer.email %>
+                  </td>
+                  <td>
+                    <% if customer.is_deleted %>
+                      <span>退会</span>
+                    <% else %>
+                      <span class="text-success">有効</span>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
