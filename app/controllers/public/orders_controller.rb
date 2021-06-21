@@ -2,6 +2,7 @@ class Public::OrdersController < ApplicationController
 
 	def new
 		@order=Order.new
+		@address=Address.where(current_customer.addresses)
 	end
 
 	def create

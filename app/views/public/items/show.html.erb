@@ -10,14 +10,9 @@
       <%= form_with model: @cart_item, local: true do |f| %>
         <%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
         <%= f.submit "カートに入れる", class: "btn btn-success" %>
+        <%= f.hidden_field :customer_id, :value => current_customer.id %>
+      　<%= f.hidden_field :item_id, :value => @item.id %>
       <% end %>
     </div>
   </div>
 </div>
-
-<%= form_with model: @cart_item, local: true do |f| %>
-	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
-  <%= f.submit "カートに入れる", class: "btn btn-success" %>
-  <%= f.hidden_field :customer_id, :value => current_customer.id %>
-  <%= f.hidden_field :item_id, :value => @item.id %>
-<% end %>
