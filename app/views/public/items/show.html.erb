@@ -1,7 +1,7 @@
 <div>
   <div class="show_item_box">
     <div>
-      <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300" %>
+      <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300", class:"border" %>
     </div>
     <div>
       <p><%= @item.name %></p>

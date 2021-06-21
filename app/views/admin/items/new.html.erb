@@ -1,6 +1,14 @@
-<!-- form_with部分 -->
+<div>
+  <% if @item.errors.any? %>
+    <%= @item.errors.count %>件のエラーが発生しました
+    <% @item.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <%= form_with model:@item, url: admin_items_path, local:true do |f| %>
-  
+
   <div>
     <h4>商品画像</h4>
     <%= f.attachment_field :image %>
@@ -25,7 +33,6 @@
     <h4>価格</h4>
     <%= f.text_field :price %>
   </div>
-  
   
   <div>
     <h4>ステータス</h4>
