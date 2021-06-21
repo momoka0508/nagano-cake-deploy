@@ -3,15 +3,13 @@
     <h3 class="order-text">
       ジャンル一覧
     </h3>
-    <!-- form_with部分 -->
-    <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
-    
-      <h6>ジャンル名</h6>
-      <%= f.text_field :name %>
-      
-      <%= f.submit '新規登録' %>
-      
-    <% end %>
+    <div class="ml-md-5">
+      <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
+        <label>ジャンル名</label>
+        <%= f.text_field :name %>
+        <%= f.submit '新規登録', class: "btn btn-success" %>
+      <% end %>
+    </div>
   </div>
   
   <div class="row mt-5">  
