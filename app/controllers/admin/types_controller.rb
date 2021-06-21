@@ -10,8 +10,11 @@ class Admin::TypesController < ApplicationController
 
   def create
     @type = Type.new(type_params)
-    @type.save
-    redirect_to admin_types_path
+    if @type.save
+      redirect_to admin_types_path
+    else
+      render :edit
+    end
   end
   
   def update
