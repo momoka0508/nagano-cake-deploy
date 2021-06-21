@@ -5,6 +5,10 @@ class Public::AddressesController < ApplicationController
     @addresses = Address.where(customer: current_customer)
   end
   
+  def edit
+    @address = Address.find(params[:id])
+  end
+  
   def create
     @address = Address.new(address_params)
     @address.customer_id = current_customer.id
