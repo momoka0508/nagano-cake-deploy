@@ -1,6 +1,6 @@
 <div class="container">
 
-    <h2 class="mt-4 mb-5 ml-5">新規会員登録</h2>
+      <h2 class="mt-4 mb-5">新規会員登録</h2>
 
       <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
 
@@ -51,14 +51,17 @@
         </div>
 
         <div class="form-group row">
-          <%= f.submit "新規登録", class: "col-md-2 offset-md-4" %>
+          <%= f.submit "新規登録", class: "col-md-2 offset-md-4 btn btn-success" %>
         </div>
 
       <% end %>
 
-    <h4>既に登録済みの方</h4>
-    <p class="ml-5">
-      <%= link_to "こちら", new_customer_session_path %> からログインしてください。
+    <h4 class="mb-4">既に登録済みの方</h4>
+    <p class="ml-5 mb-4">
+      <u>
+        <%= link_to "こちら", new_customer_session_path %>
+      </u>
+      からログインしてください。
     </p>
 
 </div>
