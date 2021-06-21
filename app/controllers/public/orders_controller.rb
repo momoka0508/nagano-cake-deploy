@@ -4,11 +4,11 @@ class Public::OrdersController < ApplicationController
 
 	def new
 		@order=Order.new
-		@address=Address.where(current_customer.addresses)
 	end
 
 	def create
 		order=Order.new(order_params)
+		order.customer_id = current_customer.id
 		order.save
 		redirect_to orders_thanks_path
 	end
