@@ -8,6 +8,7 @@ class Public::OrdersController < ApplicationController
 
 	def create
 		order=Order.new(order_params)
+		order.customer_id = current_customer.id
 		order.save
 		redirect_to orders_thanks_path
 	end
