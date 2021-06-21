@@ -33,7 +33,7 @@
 				</td>
 				<td>
 					<!--小計-->
-					<%= cart_item.tax_price * cart_item.quantity %>
+					<%= cart_item.sub_price %>
 				</td>
 				<td>
 					<%= link_to "削除する", cart_item_path(cart_item.item_id), class: "btn btn-danger", method: :delete %>
