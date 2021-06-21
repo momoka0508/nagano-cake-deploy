@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_042432) do
     t.integer "item_id"
     t.integer "tax_price"
     t.integer "quantity"
-    t.integer "product_status"
+    t.integer "product_status", default: 0
     t.datetime "updated_at", null: false
   end
 

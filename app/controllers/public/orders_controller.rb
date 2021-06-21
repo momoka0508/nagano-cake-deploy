@@ -1,5 +1,7 @@
 class Public::OrdersController < ApplicationController
 
+  before_action :authenticate_customer!
+
 	def new
 		@order = Order.new
 		@address = current_customer.addresses
@@ -19,10 +21,14 @@ class Public::OrdersController < ApplicationController
 	def complete
 	end
 
+#会員の注文履歴一覧表示(うえ)
 	def index
+		@orders = current_customer.orders
 	end
 
 	def show
+		@order = Order.find(params[:id])
+    @order_items = @order.order_items
 	end
 
 private

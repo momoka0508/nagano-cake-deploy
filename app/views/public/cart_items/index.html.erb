@@ -28,7 +28,7 @@
 						<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]] %>
 						<%= f.submit "変更", class: "btn btn-success" %>
 						<%= f.hidden_field :customer_id, :value => current_customer.id %>
-        		<%= f.hidden_field :item_id, :value => cart_item.item.id %>
+						<%= f.hidden_field :item_id, :value => cart_item.item.id %>
 					<% end %>
 				</td>
 				<td>
