@@ -3,7 +3,8 @@ class Public::OrdersController < ApplicationController
   before_action :authenticate_customer!
 
 	def new
-		@order=Order.new
+		@order = Order.new
+		@address = current_customer.addresses
 	end
 
 	def create

@@ -3,7 +3,7 @@ class Public::CartItemsController < ApplicationController
 	before_action :setup_cart_item!, only: [:update, :create, :destroy, :destroy_all]
 
 	def index
-		@cart_items=CartItem.all
+		@cart_items=current_customer.cart_items
 	end
 
 	def create
