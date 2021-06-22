@@ -4,21 +4,21 @@ class Public::OrdersController < ApplicationController
 
 	def new
 		@order = Order.new
-		@address = current_customer.addresses
+		@addresses = current_customer.addresses
 	end
 
 	def create
-		order=Order.new(order_params)
-		order.customer_id = current_customer.id
-		order.save
-		redirect_to orders_thanks_path
+		@order=Order.new(order_params)
+		@order.customer_id = current_customer.id
+		render "thanks"
 	end
 
 	def thanks
-		@cart_items=CartItem.all
+		@cart_items=current_customer.cart_items
 	end
 
 	def complete
+		order.save
 	end
 
 #会員の注文履歴一覧表示(うえ)

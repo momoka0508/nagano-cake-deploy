@@ -1,4 +1,4 @@
-<h1>注文情報確認</h1>
+<h3 class="order-text">注文情報確認</h3>
 
 <table border=1>
 	<thead>
@@ -10,14 +10,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<% @cart_items.each do |cart_item| %>
-				<td><%= item.name %></td>
-				<td><%= cart_item.items_id.tax_price(cart_item.items_id.price) %></td>
-				<td><%= cart_item.items_id.quantity %></td>
-				<td><%= tax_price * cart_item.quantity %></td>
-			<% end %>
-		</tr>
+	<%= render 'cart_items_all', cart_items: @cart_items %>
 	</tbody>
 </table>
 
