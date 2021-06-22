@@ -1,4 +1,12 @@
-<!-- form_with部分 -->
+<div>
+  <% if @item.errors.any? %>
+    <%= @item.errors.count %>件のエラーが発生しました
+    <% @item.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
+
 <%= form_with model:@item, url: admin_items_path, local:true do |f| %>
 
   <div>
@@ -26,16 +34,13 @@
     <%= f.text_field :price %>
   </div>
 
-
   <div>
     <h4>ステータス</h4>
     <%= f.radio_button :is_active, true %>
-    <%= f.label :is_active, "販売中", value: true %>
+    <label>販売中</label>
     <%= f.radio_button :is_active, false %>
-    <%= f.label :is_active, "販売停止中", value: false %>
+    <label>販売停止中</label>
   </div>
-
-
 
   <div>
     <%= f.submit '新規登録' %>

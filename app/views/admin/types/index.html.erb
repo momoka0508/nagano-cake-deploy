@@ -1,3 +1,11 @@
+<div>
+  <% if @type.errors.any? %>
+    <%= @type.errors.count %>件のエラーが発生しました
+    <% @type.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+</div>
 <div class="container my-5">
   <div class="row">
     <h3 class="order-text">
@@ -7,13 +15,13 @@
       <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
         <label>ジャンル名</label>
         <%= f.text_field :name %>
-        <%= f.submit '新規登録', class: "btn btn-success" %>
+        <%= f.submit '新規登録', class: "btn btn-success btn-sm" %>
       <% end %>
     </div>
   </div>
   
-  <div class="row mt-5">  
-    <table class="table table-striped">
+  <div class="row mt-5">
+    <table class="table table-striped col-md-4 border">
       <thead>
         <th>ジャンル</th>
         <th></th>

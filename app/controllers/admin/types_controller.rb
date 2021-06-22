@@ -13,7 +13,8 @@ class Admin::TypesController < ApplicationController
     if @type.save
       redirect_to admin_types_path
     else
-      render :edit
+      @types = Type.all
+      render :index
     end
   end
   
