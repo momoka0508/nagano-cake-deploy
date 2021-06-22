@@ -16,8 +16,8 @@ class Customer < ApplicationRecord
   validates :zip_code, presence: true
   validates :address, presence: true
   validates :phone_number, presence: true
-  
-  #退会済み会員は再ログイン
+
+  #退会済み会員
   def active_for_authentication?
     super && self.is_deleted == false
   end
