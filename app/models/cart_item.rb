@@ -14,4 +14,8 @@ class CartItem < ApplicationRecord
 		self.tax_price * self.quantity
 	end
 
+	def total_money
+		CartItem.total_money
+	end
+
 end

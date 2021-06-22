@@ -70,7 +70,12 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
+            <td>
+              <%= form_with model: @order_item, url: admin_order_item_path(@order), local: true,method: :patch do |f| %>
+                <%= f.select :product_status, [["着手不可", "着手不可"], ["制作待ち","制作待ち"],["製作中","製作中"],["制作完了","制作完了"]], class: "form-control" %>
+              　<%= f.submit "更新", class: "btn btn-primary btn-sm" %>
+              <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -81,15 +86,16 @@
         <tbody>
           <tr>
             <td>商品合計</td>
-            <td></td>
+            <td>
+            </td>
           </tr>
           <tr>
             <td>送料</td>
-            <td></td>
+            <td><%= @order.fare %></td>
           </tr>
           <tr>
             <td>請求合計金額</td>
-            <td></td>
+            <td><%= @order.total_money %></td>
           </tr>
         </tbody>
       </table>
