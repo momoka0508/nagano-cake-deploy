@@ -1,5 +1,5 @@
 en:
   devise:
     sessions:
-      signed_in: "クエストを開始しました"
-      signed_out: "クエストから離脱しました"
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
