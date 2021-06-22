@@ -21,17 +21,23 @@
       </thead>
 
       <tbody>
+        <% @orders.each do |order| %>
         <tr>
           <td>
-            <%= link_to order[:created_at].strftime("%Y-%m-%d %H:%M"), admin_orders_path(order) %>
+
+            <%= link_to admin_order_path(order), class: "text-dark" do %>
+              <%= order.created_at.strftime('%Y年/%m月/%d日 %H:%M:%S') %>
+            <% end %>
+
           </td>
           <td>
             <%= order.customer.last_name %>
             <%= order.customer.first_name %>
           </td>
-          <td><%= order.ordered_items.sum(:quantity) %></td>
-          <td><%= order.product_status %></td>
+          <td></td>
+          <td><%= order.order_status %></td>
         </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
