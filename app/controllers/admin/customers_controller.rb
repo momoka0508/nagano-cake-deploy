@@ -20,6 +20,13 @@ class Admin::CustomersController < ApplicationController
     else
       render :edit
     end
-    
+  end
+  
+  private
+  
+  def customer_params
+    params.rquire(:customer).permit(
+      :first_name, :last_name, :first_name_kana, :last_name_kana, :zip_code, :address, :phone_number, :email, :is_deleted)
+  end
 
 end
