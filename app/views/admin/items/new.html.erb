@@ -16,24 +16,24 @@
 
   <div>
     <h4>商品名</h4>
-    <%= f.text_field :name %>  
+    <%= f.text_field :name %>
   </div>
 
   <div>
     <h4>商品説明</h4>
     <%= f.text_area :body %>
   </div>
-  
+
   <div>
     <h4>ジャンル</h4>
     <%= f.collection_select :type_id, Type.all, :id, :name, include_blank: "選択して下さい" %>
   </div>
-  
+
   <div>
     <h4>価格</h4>
     <%= f.text_field :price %>
   </div>
-  
+
   <div>
     <h4>ステータス</h4>
     <%= f.radio_button :is_active, true %>
@@ -41,7 +41,7 @@
     <%= f.radio_button :is_active, false %>
     <label>販売停止中</label>
   </div>
-  
+
   <div>
     <%= f.submit '新規登録' %>
   </div>

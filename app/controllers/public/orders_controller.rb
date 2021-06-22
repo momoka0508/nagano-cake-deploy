@@ -1,27 +1,34 @@
 class Public::OrdersController < ApplicationController
 
+  before_action :authenticate_customer!
+
 	def new
-		@order=Order.new
-		@address=Address.where(current_customer.addresses)
+		@order = Order.new
+		@addresses = current_customer.addresses
 	end
 
 	def create
-		order=Order.new(order_params)
-		order.save
-		redirect_to orders_thanks_path
+		@order=Order.new(order_params)
+		@order.customer_id = current_customer.id
+		render "thanks"
 	end
 
 	def thanks
-		@cart_items=CartItem.all
+		@cart_items=current_customer.cart_items
 	end
 
 	def complete
+		order.save
 	end
 
+#会員の注文履歴一覧表示(うえ)
 	def index
+		@orders = current_customer.orders
 	end
 
 	def show
+		@order = Order.find(params[:id])
+    @order_items = @order.order_items
 	end
 
 private
