@@ -54,11 +54,11 @@
             </tr>
             <tr>
               <td class="table-active">配送料</td>
-              <td></td>
+              <td><%= @order.fare %></td>
             </tr>
             <tr>
               <td class="table-active">ご請求額</td>
-              <td></td>
+              <td><%= @order.total_money %></td>
             </tr>
           </tbody>
         </table>
@@ -86,12 +86,14 @@
         </thead>
 
         <tbody>
+          <% @cart_items.each do |cart_item| %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= cart_item.item.name %></td>
+            <td><%= cart_item.tax_price %></td>
+            <td><%= cart_item.quantity %></td>
+            <td><%= cart_item.sub_price %></td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

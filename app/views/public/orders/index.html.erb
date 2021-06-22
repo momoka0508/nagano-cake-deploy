@@ -28,9 +28,7 @@
           <td><%= order.created_at.strftime('%Y年/%m月/%d日') %></td>
           <td></td>
           <td>
-            <% order.order_ites.each do |f| %>
-            <%= f.item_name %><br>
-            <% end %>
+            
           </td>
           <td><%= order.total_money %></td>
           <td><%= order.order_status %></td>

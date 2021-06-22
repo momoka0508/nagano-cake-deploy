@@ -22,11 +22,12 @@ class Public::OrdersController < ApplicationController
 #会員の注文履歴一覧表示(うえ)
 	def index
 		@orders = current_customer.orders
+		@cart_items=current_customer.cart_items
 	end
 
 	def show
 		@order = Order.find(params[:id])
-    @order_items = @order.order_items
+    @cart_items=current_customer.cart_items
 	end
 
 private
