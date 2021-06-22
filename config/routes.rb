@@ -35,6 +35,7 @@
     resources :customers
     resources :items
     resources :types, only:[:index, :update, :create, :edit]
-    resources :orders, only:[:index, :show]
+    resources :orders, only:[:index, :show, :update]
+    resources :order_items, only:[:update]
   end
 end

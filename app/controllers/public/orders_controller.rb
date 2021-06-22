@@ -4,21 +4,19 @@ class Public::OrdersController < ApplicationController
 
 	def new
 		@order = Order.new
-		@address = current_customer.addresses
-	end
-
-	def create
-		order=Order.new(order_params)
-		order.customer_id = current_customer.id
-		order.save
-		redirect_to orders_thanks_path
+		@addresses = current_customer.addresses
 	end
 
 	def thanks
-		@cart_items=CartItem.all
+		@order=Order.new(order_params)
+		@order.customer_id = current_customer.id
+		@cart_items=current_customer.cart_items
 	end
 
-	def complete
+	def create
+		order = Order.new(order_params)
+		order.save
+		redirect_to orders_complete_path
 	end
 
 #会員の注文履歴一覧表示(うえ)
@@ -34,7 +32,7 @@ class Public::OrdersController < ApplicationController
 private
 
 def order_params
-	params.require(:order).permit(:pay_method, :zip_code, :address, :name)
+	params.require(:order).permit(:customer_id, :pay_method, :total_money, :zip_code, :address, :name)
 end
 
 end
