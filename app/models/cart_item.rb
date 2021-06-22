@@ -17,5 +17,5 @@ class CartItem < ApplicationRecord
 	def total_money
 		CartItem.total_money
 	end
-
+  
 end
