@@ -17,9 +17,5 @@ class Customer < ApplicationRecord
   validates :address, presence: true
   validates :phone_number, presence: true
 
-  #退会済み会員
-  def active_for_authentication?
-    super && self.is_deleted == false
-  end
-
+  
 end
