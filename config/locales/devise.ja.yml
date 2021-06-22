@@ -1,7 +1,5 @@
 en:
   devise:
-    failure:
-      inactive: "このアカウントは退会済みです"
     sessions:
-      signed_in: "ログインしました"
-      singed_out: "ログアウトしました"
+      signed_in: "クエストを開始しました"
+      signed_out: "クエストから離脱しました"
