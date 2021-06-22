@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_06_19_042432) do
     t.integer "customer_id"
     t.integer "pay_method", default: 0
     t.integer "order_status", default: 0
-    t.integer "fare"
+    t.integer "fare", default: 800
     t.integer "total_money"
     t.string "zip_code"
     t.string "address"
