@@ -3,8 +3,8 @@ class Order < ApplicationRecord
 	has_many :order_items, dependent: :destroy
 
 	validates :customer_id, presence: true
-	validates :fare, presence: true
-	validates :total_money, presence: true
+	# validates :fare, presence: true
+	# validates :total_money, presence: true
 	validates :zip_code, presence: true
 	validates :address, presence: true
 	validates :name, presence: true
