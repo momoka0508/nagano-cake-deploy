@@ -39,5 +39,6 @@
     resources :types, only:[:index, :update, :create, :edit]
     resources :orders, only:[:index, :show, :update]
     resources :order_items, only:[:update]
+    get "orders/current_user_order/:id" => "orders#current_user_order"
   end
 end
