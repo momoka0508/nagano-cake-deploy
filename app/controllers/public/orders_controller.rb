@@ -13,20 +13,19 @@ class Public::OrdersController < ApplicationController
 		@cart_items=current_customer.cart_items
 	end
 
-	def create_order
+	def create
 		@order = Order.new(order_params)
-		@order.customer_id = current_customer.id
 		@order.save
     #saveでOrderモデルにorder_idが入る
-    
+
 		#注文詳細内容の保存
-		current_customer.cart_items.each do |cart|
-			@order_detail = OrderDetail.new
-			@order_detail.order_id = @order.id
-			@order_detail.item_name = cart.item.name
-			@order_detail.item_price = cart.item.price
-			@order_detail.quantity = cart.quantity
-			@order_detail.save
+		current_customer.cart_items.each do |cart_item|
+			@order_item = OrderItem.new
+			@order_item.order_id = @order.id
+			@order_item.item_id = cart_item.item_id
+			@order_item.tax_price = cart_item.tax_price
+			@order_item.quantity = cart_item.quantity
+			@order_item.save!
 		end
 
 		redirect_to orders_complete_path
