@@ -4,9 +4,14 @@ class Admin::OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def current_user_order
+    @orders = Order.where(customer_id: params[:id])
+    render action: :index
+  end
+
   def show
     @order = Order.find(params[:id])
-
+    @order_items = @order.order_items
   end
 
   def update
