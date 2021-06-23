@@ -57,5 +57,9 @@ gem 'jquery-rails'
 
 gem 'kaminari','~> 1.2.1'
 
+#ページネーション関連
+gem 'will_paginate', '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
+
 #エラーメッセージの日本語化gem
 gem 'rails-i18n'
