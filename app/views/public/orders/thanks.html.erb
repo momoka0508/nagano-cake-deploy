@@ -1,29 +1,51 @@
 <h3 class="order-text">注文情報確認</h3>
 
 <table border=1>
-	<thead>
-		<tr>
-			<th>商品名</th>
-			<th>単価(税込)</th>
-			<th>数量</th>
-			<th>小計</th>
-		</tr>
-	</thead>
-	<tbody>
-	<%= render 'cart_items_all', cart_items: @cart_items %>
-	</tbody>
+<thead>
+	<tr>
+		<th>商品名</th>
+		<th>単価(税込)</th>
+		<th>数量</th>
+		<th>小計</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+	<% set_price = 0 %>
+	<% @cart_items.each do |cart_item| %>
+		<td><%= cart_item.item.name %></td>
+		<td><%= cart_item.tax_price %></td>
+		<td><%= cart_item.quantity %></td>
+		<td><%= cart_item.sub_price %></td>
+		<% set_price += cart_item.sub_price %>
+	<% end %>
+	</tr>
+</tbody>
 </table>
 
 <table border=1>
 	<th>送料</th>
-	<td></td>
+	<td><%= @order.fare %></td>
 	<th>商品合計</th>
-	<td></td>
+	<td><%= set_price %></td>
 	<th>請求金額</th>
-	<td></td>
+	<td><%= @order.fare + set_price %></td>
 </table>
 
 <h2>支払い方法</h2>
+	<%= @order.pay_method %>
 <h2>お届け先</h2>
+	〒<%= @order.zip_code %>　<%= @order.address %></br>
+	　<%= @order.name %></br>
 
-<%= link_to "注文を確定する", orders_complete_path, class: "btn btn-success" %>
+<%= form_with model: @order, url: orders_path, method: :POST, local: true do |f| %>
+
+	<%= f.hidden_field :customer_id, :value => current_customer.id %>
+	<%= f.hidden_field :pay_method, :value => @order.pay_method %>
+	<%= f.hidden_field :total_money, :value => @order.fare + set_price %>
+	<%= f.hidden_field :zip_code, :value => @order.zip_code %>
+	<%= f.hidden_field :address, :value => @order.address %>
+	<%= f.hidden_field :name, :value => @order.name %>
+
+	<%= f.submit "注文を確定する", class: "btn btn-success" %>
+<% end %>
