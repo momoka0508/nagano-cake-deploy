@@ -55,8 +55,9 @@
     </div>
 
     <div class="mx-auto">
-      <%= will_paginate @customers %>
+      <%= will_paginate @customers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
+    
   </div>
 
 </div>
