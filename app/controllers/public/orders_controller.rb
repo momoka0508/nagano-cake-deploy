@@ -8,8 +8,21 @@ class Public::OrdersController < ApplicationController
 	end
 
 	def thanks
-		@order=Order.new(order_params)
+		@order = Order.new(order_params)
 		@order.customer_id = current_customer.id
+
+		if params[:order_address] == "option1"
+			@order.zip_code = current_customer.zip_code
+			@order.address = current_customer.address
+			@order.name = current_customer.last_name + current_customer.first_name
+		elsif params[:order_address] == "option2"
+			@address = Address.find(params[:order][:select_address])
+			@order.address = @address.address
+			@order.name = @address.name
+			@order.zip_code = @address.zip_code
+		elsif params[:order_address] == "option3"
+		end
+
 		@cart_items=current_customer.cart_items
 	end
 
@@ -31,6 +44,9 @@ class Public::OrdersController < ApplicationController
 		redirect_to orders_complete_path
 	end
 
+	def complete
+	end
+
 #会員の注文履歴一覧表示(うえ)
 	def index
 		@orders = current_customer.orders
@@ -38,7 +54,7 @@ class Public::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-    @order_details = @order.order_detailsss
+　　　　　　　　@order_items = @order.order_items
 	end
 
 private

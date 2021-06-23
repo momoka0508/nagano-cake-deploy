@@ -1,7 +1,7 @@
 class Admin::TypesController < ApplicationController
   def index
     @type = Type.new
-    @types = Type.all
+    @types = Item.page(params[:page]).per(8)
   end
 
   def edit
@@ -11,6 +11,7 @@ class Admin::TypesController < ApplicationController
   def create
     @type = Type.new(type_params)
     if @type.save
+      flash[:notice] = "ジャンルを作成しました"
       redirect_to admin_types_path
     else
       @types = Type.all
@@ -21,6 +22,7 @@ class Admin::TypesController < ApplicationController
   def update
     @type = Type.find(params[:id])
     @type.update(type_params)
+    flash[:notice] = "ジャンルを編集しました"
     redirect_to admin_types_path
   end
   
