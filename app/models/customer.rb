@@ -16,5 +16,9 @@ class Customer < ApplicationRecord
   validates :zip_code, presence: true, format: { with: /\A[0-9]+\z/, message: "は半角数字のみで入力して下さい" }
   validates :address, presence: true
   validates :phone_number, presence: true, format: { with: /\A[0-9]+\z/, message: "は半角数字のみで入力して下さい" }
-  
+
+  def active_for_authentication?
+    super && self.is_deleted == false
+  end
+
 end
