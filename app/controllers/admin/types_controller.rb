@@ -1,7 +1,7 @@
 class Admin::TypesController < ApplicationController
   def index
     @type = Type.new
-    @types = Item.page(params[:page]).per(8)
+    @types = Type.page(params[:page]).per(8)
   end
 
   def edit
