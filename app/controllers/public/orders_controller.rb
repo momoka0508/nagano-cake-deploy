@@ -27,8 +27,20 @@ class Public::OrdersController < ApplicationController
 	end
 
 	def create
-		order = Order.new(order_params)
-		order.save
+		@order = Order.new(order_params)
+		@order.save
+    #saveでOrderモデルにorder_idが入る
+
+		#注文詳細内容の保存
+		current_customer.cart_items.each do |cart_item|
+			@order_item = OrderItem.new
+			@order_item.order_id = @order.id
+			@order_item.item_id = cart_item.item_id
+			@order_item.tax_price = cart_item.tax_price
+			@order_item.quantity = cart_item.quantity
+			@order_item.save!
+		end
+
 		redirect_to orders_complete_path
 	end
 
@@ -42,7 +54,7 @@ class Public::OrdersController < ApplicationController
 
 	def show
 		@order = Order.find(params[:id])
-	    @order_items = @order.order_items
+　　　　　　　　@order_items = @order.order_items
 	end
 
 private
