@@ -36,7 +36,7 @@
 	<%= @order.pay_method %>
 <h2>お届け先</h2>
 	〒<%= @order.zip_code %>　<%= @order.address %></br>
-	<%= @order.name %></br>
+	　<%= @order.name %></br>
 
 <%= form_with model: @order, url: orders_path, method: :POST, local: true do |f| %>
 

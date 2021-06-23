@@ -19,11 +19,11 @@
     devise_for :customers, only: [:sessions, :registrations]
 
     resources :addresses
+    get "orders/complete" => "orders#complete"
     resources :orders, only:[:new, :create, :index, :show]
     resources :cart_items, only:[:index, :update, :create, :destroy]
     resources :items, only:[:index, :show]
     post "orders/thanks" => "orders#thanks"
-    get "orders/complete" => "orders#complete"
     delete "cart_items" => "cart_items#destroy_all"
   end
 
