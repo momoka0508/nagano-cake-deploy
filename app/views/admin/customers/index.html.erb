@@ -1,5 +1,5 @@
 <div class="container">
-  
+
   <%= render "shared/flash_message" %>
 
   <div class="row mb-4">
@@ -55,7 +55,7 @@
     </div>
 
     <div class="mx-auto">
-      <%= paginate @customers %>
+      <%= will_paginate @customers %>
     </div>
   </div>
 
