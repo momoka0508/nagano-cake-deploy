@@ -13,8 +13,8 @@ class Customer < ApplicationRecord
   validates :last_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい' }
   validates :first_name_kana, presence: true, format: { with: /\A[\p{katakana}\p{blank}ー－]+\z/, message: 'はカタカナで入力して下さい' }
   validates :email, presence: true
-  validates :zip_code, presence: true
+  validates :zip_code, presence: true, format: { with: /\A[0-9]+\z/, message: "は半角数字のみで入力して下さい" }
   validates :address, presence: true
-  validates :phone_number, presence: true
+  validates :phone_number, presence: true, format: { with: /\A[0-9]+\z/, message: "は半角数字のみで入力して下さい" }
   
 end
