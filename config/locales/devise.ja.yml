@@ -10,6 +10,10 @@ ja:
 
   devise:
     failure:
+      admin:
+        not_found_in_database: 'メールアドレスかパスワードが違います'
+      customer:
+        not_found_in_database: 'メールアドレスかパスワードが違います'
       unauthenticated: 'ログインしてください。'
 #      unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: '本登録を行ってください。'
