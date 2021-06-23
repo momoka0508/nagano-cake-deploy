@@ -1,12 +1,5 @@
-<div>
-  <% if @type.errors.any? %>
-    <%= @type.errors.count %>件のエラーが発生しました
-    <% @type.errors.full_messages.each do |message| %>
-      <p><%= message %></p>
-    <% end %>
-  <% end %>
-</div>
 <div class="container my-5">
+  <%= render "shared/flash_message" %>
   <div class="row">
     <h3 class="order-text">
       ジャンル一覧
