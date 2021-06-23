@@ -19,7 +19,9 @@
     devise_for :customers, only: [:sessions, :registrations]
 
     resources :addresses
+
     post "orders/thanks" => "orders#thanks"
+
     get "orders/complete" => "orders#complete"
     resources :orders, only:[:new, :create, :index, :show]
     resources :cart_items, only:[:index, :update, :create, :destroy]
