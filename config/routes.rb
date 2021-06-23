@@ -39,5 +39,6 @@
     resources :types, only:[:index, :update, :create, :edit]
     resources :orders, only:[:index, :show, :update]
     resources :order_items, only:[:update]
+    get "/customer_datas/:id/orders" => "orders#index", as: "customer_data_orders" # 会員詳細 => 個人の会員だけの注文履歴を表示する
   end
 end
