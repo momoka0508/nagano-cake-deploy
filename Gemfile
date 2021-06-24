@@ -64,3 +64,5 @@ gem 'will_paginate-bootstrap4'
 
 #エラーメッセージの日本語化gem
 gem 'rails-i18n'
+
+gem 'font-awesome-sass', '~> 5.13'

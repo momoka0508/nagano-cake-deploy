@@ -1,4 +1,5 @@
 <div class="container my-5">
+  <%= render "shared/flash_message" %>
   <div class="row">
     <h3 class="order-text">
       ジャンル一覧
@@ -7,13 +8,13 @@
       <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
         <label>ジャンル名</label>
         <%= f.text_field :name %>
-        <%= f.submit '新規登録', class: "btn btn-success" %>
+        <%= f.submit '新規登録', class: "btn btn-success btn-sm" %>
       <% end %>
     </div>
   </div>
   
-  <div class="row mt-5">  
-    <table class="table table-striped">
+  <div class="row mt-5">
+    <table class="table table-striped col-md-4 border">
       <thead>
         <th>ジャンル</th>
         <th></th>
@@ -27,5 +28,6 @@
         <% end %>
       </tbody>
     </table>
+    <div class="pagination"><%= paginate @types %></div>
   </div>
 </div>

@@ -11,17 +11,17 @@
   <body>
     <header>
       <% if customer_signed_in? %>
-        <%= render 'homes/header_public' %>
+        <%= render 'layouts/header_public' %>
       <% elsif admin_signed_in? %>
-        <%= render 'homes/header_admin' %>
+        <%= render 'layouts/header_admin' %>
       <% else %>
-        <%= render 'homes/header_logout' %>
+        <%= render 'layouts/header_logout' %>
       <% end %>
     </header>
 
     <%= yield %>
 
-    <footer class="footer text-white bg-dark">
+    <footer class="footer text-white bg-dark fixed-bottom">
       <div class="row">
         <div class="offset-8 mt-3">
           <p>©CopyRight TyanTyans.inc</p>

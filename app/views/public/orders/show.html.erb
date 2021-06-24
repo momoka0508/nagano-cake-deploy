@@ -20,19 +20,23 @@
           <tbody>
             <tr>
               <td class="table-active">注文日</td>
-              <td></td>
+              <td><%= @order.created_at.strftime('%Y年/%m月/%d日') %></td>
             </tr>
             <tr>
               <td class="table-active">配送先</td>
-              <td></td>
+              <td>
+                〒<%= @order.zip_code %><br>
+                <%= @order.address %><br>
+                <%= @order.name %> 様
+              </td>
             </tr>
             <tr>
               <td class="table-active">支払い方法</td>
-              <td></td>
+              <td><%= @order.pay_method %></td>
             </tr>
             <tr>
               <td class="table-active">ステータス</td>
-              <td></td>
+              <td><%= @order.order_status %></td>
             </tr>
           </tbody>
         </table>
@@ -50,15 +54,18 @@
           <tbody>
             <tr>
               <td class="table-active">商品合計</td>
-              <td></td>
+              <td>
+                <!-- 商品合計 請求額 - 送料 -->
+                <%= @order.total_money - @order.fare %>
+              </td>
             </tr>
             <tr>
               <td class="table-active">配送料</td>
-              <td></td>
+              <td><%= @order.fare %></td>
             </tr>
             <tr>
               <td class="table-active">ご請求額</td>
-              <td></td>
+              <td><%= @order.total_money %></td>
             </tr>
           </tbody>
         </table>
@@ -86,12 +93,17 @@
         </thead>
 
         <tbody>
+          <% @order_items.each do |order_item| %>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= order_item.item.name %></td>
+            <td><%= order_item.tax_price %></td>
+            <td><%= order_item.quantity %></td>
+            <td>
+              <!-- 小計の計算 税込み単価×注文個数 -->
+              <%= order_item.tax_price * order_item.quantity %>
+            </td>
           </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
