@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-6 text-left">
-          <%= link_to "退会する", withdrawal_customers_path, method: :patch, class: "btn btn-danger" %>
+          <%= link_to "退会する", withdrawal_customers_path, method: :patch, data: { confirm: "【確認】アカウントを削除してもよろしいですか？" }, class: "btn btn-danger" %>
         </div>
 
       </div>

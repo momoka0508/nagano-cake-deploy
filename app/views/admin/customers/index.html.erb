@@ -53,8 +53,9 @@
     </div>
 
     <div class="mx-auto">
-      <%= paginate @customers %>
+      <%= will_paginate @customers, :previous_label => '<前へ', :next_label => '次へ>', renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
+
   </div>
 
 </div>

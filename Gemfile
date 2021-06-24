@@ -56,4 +56,13 @@ gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
 gem 'kaminari','~> 1.2.1'
+
+#ページネーション関連
+gem 'will_paginate', '3.1.7'
+#ページネーション専用bootstrap
+gem 'will_paginate-bootstrap4'
+
+#エラーメッセージの日本語化gem
+gem 'rails-i18n'
+
 gem 'font-awesome-sass', '~> 5.13'
