@@ -1,0 +1,19 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.top-main{
+  position: relative;
+  text-align: center;
+}
+
+.top-main p{
+  position: absolute;
+  color: #FFF;
+  padding: 10px;
+  border: double 5px #000;
+  background-color: rgba(128,128,128,0.7);
+  top: 33%;
+  right: 30%;
+  left: 30%;
+}
