@@ -19,7 +19,7 @@
           <%= attachment_image_tag item, :image, :fill, 180, 150, fallback: "no_image.jpg", size: "180x150" %>
         </p>
         <h5><%= item.name %></h5>
-        <p><%= item.price %>円</p>
+        <p>￥<%= item.price.to_s(:delimited) %></p>
       </div>
     <% end %>
   </div>  

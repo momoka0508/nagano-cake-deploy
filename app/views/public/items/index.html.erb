@@ -14,7 +14,7 @@
         <h5><%= item.name %></h5>
         <p>
           <% if item.is_active == true %>
-            <%= item.price %>円
+            ￥<%= item.price.to_s(:delimited) %>
           <% elsif item.is_active == false %>
             売り切れ中
           <% end %>
