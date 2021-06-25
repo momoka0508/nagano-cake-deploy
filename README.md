@@ -69,11 +69,11 @@ $ mkdir tyantyans
 ```
 そしたら、作成したディレクトリにリモートリポジトリをクローンします。
 ```
-& git clone git@github.com:TyanTyans/nagano_cake.git tyantyans
+$ git clone git@github.com:TyanTyans/nagano_cake.git tyantyans
 ```
 作成したディレクトリに移動します。
 ```
-& cd tyantyans
+$ cd tyantyans
 ```
 Gemをインストールします。
 ```
