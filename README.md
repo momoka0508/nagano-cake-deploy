@@ -200,7 +200,7 @@ ER図
     </td>
     <td align="center">
       <a href="https://github.com/yuki-zirushi">
-        <img width="80" src="https://user-images.githubusercontent.com/81721112/123476049-29565080-d637-11eb-9d4e-509c4b1aa59e.png"></a><br>
+        <img width="80" src="https://avatars.githubusercontent.com/u/81721112?v=4"></a><br>
         あいちゃん<br>
         <a href="https://github.com/yuki-zirushi">yuki-zirushi</a>
       </a>
