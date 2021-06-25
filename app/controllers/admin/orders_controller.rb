@@ -6,6 +6,7 @@ class Admin::OrdersController < ApplicationController
 
   def current_user_order
     @orders = Order.where(customer_id: params[:id])
+    @orders = Kaminari.paginate_array(@orders).page(params[:page]).per(8)
     render action: :index
   end
 

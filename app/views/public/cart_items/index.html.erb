@@ -26,7 +26,7 @@
 	　<div class="row">
 			<div class="col-10 mx-auto">
 				<%= link_to "カートを空にする", "/cart_items", class: "btn btn-danger", method: :delete %></br>
-				<table class="table table-bordered table-hover">
+				<table class="table table-bordered">
 					<thead class = "table-active">
 						<tr>
 							<th>商品名</th>
@@ -37,9 +37,9 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% set_price = 0 %>
+						<% @cart_items.each do |cart_item| %>
 						<tr>
-							<% set_price = 0 %>
-							<% @cart_items.each do |cart_item| %>
 								<td>
 									<%= cart_item.item.name %>
 								</td>
@@ -73,12 +73,12 @@
 
 		<div class = "row">
 			<div class = "offset-1 col-3">
-				<table class="table table-bordered table-hover">
+				<table class="table table-bordered">
 					<thead class = "table-active">
 						<th>合計金額</th>
 					</thead>
 					<tbody>
-						<td><%= set_price %></td>
+						<td>¥ <%= set_price %></td>
 					</tbody>
 				</table>
 				<%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
