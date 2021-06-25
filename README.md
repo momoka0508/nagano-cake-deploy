@@ -166,12 +166,6 @@ ER図
 * Ruby on rails (5.2.6)
 * JavaScript
 
-# 参考サイト
-
-<br>
-https://qiita.com/Qiita/items/c686397e4a0f4f11683d
-<br>
-
 # 開発者
 チーム名 ちゃんちゃんず
 
