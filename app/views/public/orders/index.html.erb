@@ -2,7 +2,7 @@
 
   <div class="row">
     <div class="offset-1 col-3 text-center">
-      <h3 class="order-text">
+      <h3 class="text title-text">
         注文履歴一覧
       </h3>
     </div>
@@ -11,7 +11,7 @@
   <div class="row mt-5">
     <table class="table table-bordered table-hover">
 
-      <thead class="table-active">
+      <thead class="table-active text">
         <tr>
           <th>注文日</th>
           <th>配送先</th>
@@ -24,7 +24,7 @@
 
       <tbody>
         <% @orders.each do |order| %>
-        <tr>
+        <tr class="light-text">
           <td><%= order.created_at.strftime('%Y年/%m月/%d日') %></td>
           <td>
               〒<%= order.zip_code %><br>

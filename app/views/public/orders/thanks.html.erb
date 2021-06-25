@@ -1,8 +1,8 @@
-<h3 class="order-text">注文情報確認</h3>
+<h3 class="order-text text">注文情報確認</h3>
 
 <table border=1>
 <thead>
-	<tr>
+	<tr class="text">
 		<th>商品名</th>
 		<th>単価(税込)</th>
 		<th>数量</th>
@@ -10,7 +10,7 @@
 	</tr>
 </thead>
 <tbody>
-	<tr>
+	<tr class="text">
 	<% set_price = 0 %>
 	<% @cart_items.each do |cart_item| %>
 		<td><%= cart_item.item.name %></td>
@@ -23,7 +23,7 @@
 </tbody>
 </table>
 
-<table border=1>
+<table border=1 class="text">
 	<th>送料</th>
 	<td><%= @order.fare %></td>
 	<th>商品合計</th>
@@ -31,12 +31,13 @@
 	<th>請求金額</th>
 	<td><%= @order.fare + set_price %></td>
 </table>
-
-<h2>支払い方法</h2>
-	<%= @order.pay_method %>
-<h2>お届け先</h2>
-	〒<%= @order.zip_code %>　<%= @order.address %></br>
-	　<%= @order.name %></br>
+<div class="text">
+	<h2>支払い方法</h2>
+		<%= @order.pay_method %>
+	<h2>お届け先</h2>
+		〒<%= @order.zip_code %>　<%= @order.address %></br>
+		　<%= @order.name %></br>
+</div>
 
 <%= form_with model: @order, url: orders_path, method: :POST, local: true do |f| %>
 
@@ -46,5 +47,7 @@
 	<%= f.hidden_field :zip_code, :value => @order.zip_code %>
 	<%= f.hidden_field :address, :value => @order.address %>
 	<%= f.hidden_field :name, :value => @order.name %>
-	<%= f.submit "購入を確定する", class: "btn btn-lg btn-danger ml-auto" %>
+	<div class="text">
+		<%= f.submit "購入を確定する", class: "btn btn-lg btn-danger ml-auto" %>
+	</div>
 <% end %>

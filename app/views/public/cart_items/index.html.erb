@@ -1,17 +1,17 @@
 <div class="container my-5">
   <div class="row">
-    <h3 class="order-text">
+    <h3 class="order-text text">
     	ショッピングカート
-	</h3>
+	  </h3>
   </div>
 
 　<div class="row">
-	<div class="col-md-10 mx-auto">
+	<div class="col-md-10 mx-auto text">
 		<%= link_to "カートを空にする", "/cart_items", class: "btn btn-danger", method: :delete %>
 
 		<table border=1>
 			<thead>
-				<tr>
+				<tr class="text">
 					<th>商品名</th>
 					<th>単価(税込)</th>
 					<th>数量</th>
@@ -20,7 +20,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr class="text">
 					<% set_price = 0 %>
 					<% @cart_items.each do |cart_item| %>
 						<td>
@@ -51,14 +51,17 @@
 			</tbody>
 		</table>
 
-		<%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+    <div class="text">
+			<%= link_to "買い物を続ける", root_path, class: "btn btn-primary" %>
+		</div>
 
-		<table border=1>
+		<table border=1 class="text">
 			<th>合計金額</th>
 			<td><%= set_price %></td>
 		</table>
-
-		<%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
+    <div class="text">
+			<%= link_to "情報入力に進む", new_order_path, class: "btn btn-success" %>
+		</div>
 	</div>
   </div>
 </div>
