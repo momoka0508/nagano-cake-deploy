@@ -101,7 +101,19 @@ $ rails s
 >> [ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_ec.pdf)
 
 # 設計書
+ER図
+![ER図](https://user-images.githubusercontent.com/82991184/123381851-39851600-d5cc-11eb-85d9-cceed10fbb98.jpg)
 
+テーブル定義書
+![テーブル定義書1](https://user-images.githubusercontent.com/82991184/123381635-f62aa780-d5cb-11eb-9ecf-8cb8fcb7e639.jpg)
+![テーブル定義書2](https://user-images.githubusercontent.com/82991184/123381653-f9be2e80-d5cb-11eb-851f-8e1cc69256fc.jpg)
+![テーブル定義書3](https://user-images.githubusercontent.com/82991184/123381663-fc208880-d5cb-11eb-9f49-2cf25cae5ba6.jpg)
+
+アプリケーション詳細設計
+![アプリケーション詳細設計](https://user-images.githubusercontent.com/82991184/123382386-dba4fe00-d5cc-11eb-8cbf-124ec0e8cd74.jpg)
+
+WBS
+![WBS1](https://drive.google.com/file/d/1LbYo4zRDyjXpQeGaFgChtDdWOhJ6KUVp/view?usp=sharing)
 # テスト用アカウント
 【管理者用アカウント；ログイン】
 * メールアドレス；admin@gmail.com
