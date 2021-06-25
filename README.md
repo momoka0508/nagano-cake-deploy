@@ -101,9 +101,9 @@ $ rails s
 >> [ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_ec.pdf)
 
 # 設計書
-<font color="Red">ER図</font>
+ER図
 <details>
-<summary><font color="Red">ここを押してね</font></summary>
+<summary>ここを押してね</summary>
 
 ![ER図](https://user-images.githubusercontent.com/82991184/123381851-39851600-d5cc-11eb-85d9-cceed10fbb98.jpg)
 
