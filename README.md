@@ -166,7 +166,6 @@ ER図
 * Ruby on rails (5.2.6)
 * JavaScript
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQGCGO4BKNKmsm3Oml53J5vTzK7dRBqXHoABnftOb5n3HLiixWzNCMmwc2w7InQig/embed?start=false&loop=false&delayms=3000" frameborder="0" width="500" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 # 開発者
 チーム名 ちゃんちゃんず
