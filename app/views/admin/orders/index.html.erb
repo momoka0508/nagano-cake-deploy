@@ -2,7 +2,7 @@
   <%= render "shared/flash_message" %>
   <div class="row">
     <div class="offset-1 col-3 text-center">
-      <h3 class="order-text">
+      <h3 class="page_title">
         注文履歴一覧
       </h3>
     </div>
@@ -38,6 +38,6 @@
         <% end %>
       </tbody>
     </table>
-    <div class="pagination"><%= paginate @orders %></div>
+    <div class="pagination"><%= paginate @orders, theme: 'twitter-bootstrap-4' %></div>
   </div>
 </div>
