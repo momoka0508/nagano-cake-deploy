@@ -89,15 +89,15 @@ $ rails s
 
 ## 管理者用側
 
-[UI Flows](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/uiflows_admin.png)
+> [UI Flows](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/uiflows_admin.png)
 
-[ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_admin.pdf)
+> [ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_admin.pdf)
 
 ## エンドユーザー側
 
-[UI Flows](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/uiflows_ec.png)
+> [UI Flows](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/uiflows_ec.png)
 
-[ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_ec.pdf)
+> [ワイヤーフレーム](https://s3-ap-northeast-1.amazonaws.com/wals/curriculum/ec_site/design_documents/wire_ec.pdf)
 
 # 設計書
 
