@@ -1,8 +1,11 @@
 <div class="container my-5">
+
   <div class="row">
-    <h3 class="order-text">
-	  注文情報入力
-	</h3>
+  	<div class = "offset-1 col-3 text-center">
+    	<h3 class="order-text">
+	  		注文情報入力
+			</h3>
+		</div>
   </div>
 
   <div class="row">
@@ -10,14 +13,14 @@
     <%= form_with model: @order, url: orders_thanks_path, method: :POST, local: true do |f| %>
 	    <%= f.hidden_field :customer_id, :value => current_customer.id %>
 
-			<h2>支払い方法</h2>
+			<h4>支払い方法</h4>
 
 			<%= f.radio_button :pay_method, :クレジットカード, checked: true %>
 			<%= f.label :pay_method, "クレジットカード" %>
 			<%= f.radio_button :pay_method, :銀行振込 %>
 			<%= f.label :pay_method, "銀行振込" %>
 
-			<h2>お届け先</h2>
+			<h4>お届け先</h
 
 			<div class="form-check">
 				<input class="form_check_input" type="radio" name="order_address" id="customer_address" value="option1" checked>
@@ -41,11 +44,11 @@
 				<label class="form_check_label" for="new_address">
 					新しいお届け先
 				</label></br>
-					<%= f.label :zip_code, "郵便番号(ハイフンなし)" %>
+					<%= f.label :zip_code, "郵便番号（ハイフンなし）" %>
 					<%= f.text_field :zip_code, placeholder: "0000000" %></br>
-					<%= f.label :address, "住所" %>
-					<%= f.text_field :address, placeholder: "東京都渋谷区代々木神園町0-0" %></br>
-					<%= f.label :name, "宛名" %>
+					<%= f.label :address, "住所　　　　　　　　　　" %>
+					<%= f.text_field :address, placeholder: "東京都渋谷区" %></br>
+					<%= f.label :name, "宛名　　　　　　　　　　" %>
 					<%= f.text_field :name, placeholder: "令和道子" %></br>
 			</div>
 
