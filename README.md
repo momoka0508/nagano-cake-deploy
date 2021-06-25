@@ -179,7 +179,7 @@ ER図
   <tr>
     <td align="center">
       <a href="https://github.com/M-Abe47">
-        <img width="80" src="https://github.com/M-Abe47"></a><br>
+        <img width="80" src="https://avatars.githubusercontent.com/u/83204334?v=4"></a><br>
         あべちゃん<br>
         <a href="https://github.com/M-Abe47"></a>
       </a>
