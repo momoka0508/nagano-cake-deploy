@@ -109,12 +109,15 @@ ER図
 </details>
 テーブル定義書
 <details>
+
 ![テーブル定義書1](https://user-images.githubusercontent.com/82991184/123381635-f62aa780-d5cb-11eb-9ecf-8cb8fcb7e639.jpg)
 ![テーブル定義書2](https://user-images.githubusercontent.com/82991184/123381653-f9be2e80-d5cb-11eb-851f-8e1cc69256fc.jpg)
 ![テーブル定義書3](https://user-images.githubusercontent.com/82991184/123381663-fc208880-d5cb-11eb-9f49-2cf25cae5ba6.jpg)
+
 </details>
 アプリケーション詳細設計
 <details>
+
 ![アプリケーション詳細設計](https://user-images.githubusercontent.com/82991184/123382386-dba4fe00-d5cc-11eb-8cbf-124ec0e8cd74.jpg)
 </details>
 
