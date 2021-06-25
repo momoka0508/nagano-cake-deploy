@@ -82,7 +82,9 @@ $ rails s
 * ホームページ；"/"
 * 管理者ログインページ；"/admins/sign_in"
 
-# 要件定義書
+# 資料
+[要件定義書](https://wals.s3-ap-northeast-1.amazonaws.com/curriculum/ec_site/design_documents/commit_ecsite_rdd.pdf)
+[機能一覧](https://wals.s3-ap-northeast-1.amazonaws.com/curriculum/ec_site/design_documents/ecsite_functions_list.pdf)
 
 # 設計書
 
