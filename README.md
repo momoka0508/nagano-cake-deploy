@@ -103,7 +103,9 @@ $ rails s
 # 設計書
 ER図
 <details>
+
 ![ER図](https://user-images.githubusercontent.com/82991184/123381851-39851600-d5cc-11eb-85d9-cceed10fbb98.jpg)
+
 </details>
 テーブル定義書
 <details>
