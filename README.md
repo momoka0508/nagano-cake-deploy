@@ -123,6 +123,12 @@ $ rails s
 * will_paginate-bootstrap4
 * rails-i18n
 
+# 使用言語
+* HTML&CSS
+* Ruby(2.6.3)
+* Ruby on rails (5.2.6)
+* JavaScript
+
 # 開発者
 チーム名 ちゃんちゃんず
 
