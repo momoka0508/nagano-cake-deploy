@@ -63,7 +63,19 @@ InstagramのDMやメールで通販の注文を受けていたが、情報管理
 |ジャンル設定機能|・ジャンルの追加・変更を行うことができる。|×|
 
 # 使用方法
-まず、リポジトリにクローンし、Gemをインストールします。
+まず、ローカル環境に何かしらのディレクトリを作成します。
+```
+$ mkdir tyantyans
+```
+そしたら、作成したディレクトリにリモートリポジトリをクローンします。
+```
+& git clone git@github.com:TyanTyans/nagano_cake.git tyantyans
+```
+作成したディレクトリに移動します。
+```
+& cd tyantyans
+```
+Gemをインストールします。
 ```
 $ bundle install
 ```
