@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #A52A2A;">
+  <div class="container">
+
+    <a href="/" class="rogo"><%= image_tag 'logo.jpg', size: "260x75" %></a>
+    <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li><%= link_to " My page",my_page_customers_path,class: "nav-link fas fa-portrait header_icon" %></li>
+        <li><%= link_to " Items",items_path,class: "nav-link fas fa-birthday-cake header_icon" %></li>
+        <li><%= link_to " Cart",cart_items_path,class: "nav-link fas fa-shopping-cart header_icon" %></li>
+        <li><%= link_to " Log out",destroy_customer_session_path,method: :delete,class: "nav-link fas fa-sign-out-alt header_icon" %></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

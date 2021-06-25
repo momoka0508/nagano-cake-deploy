@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
@@ -51,3 +51,19 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem "devise"
+
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
+
+gem 'kaminari','~> 1.2.1'
+
+#ページネーション関連
+gem 'will_paginate', '3.1.7'
+#ページネーション専用bootstrap
+gem 'will_paginate-bootstrap4'
+
+#エラーメッセージの日本語化gem
+gem 'rails-i18n'
+
+gem 'font-awesome-sass', '~> 5.13'
