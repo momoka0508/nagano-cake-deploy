@@ -177,6 +177,6 @@ ER図
 
 <table>
   <tr>
-    <td><img width="80" src="https://user-images.githubusercontent.com/81721112/123467958-17bb7b80-d62c-11eb-9dc9-a637deba70d3.png"> あいちゃん [yuki-zirushi](https://github.com/yuki-zirushi)</td>
+    <td align="center"><img width="80" src="https://user-images.githubusercontent.com/81721112/123467958-17bb7b80-d62c-11eb-9dc9-a637deba70d3.png"><br>あいちゃん<br>[yuki-zirushi](https://github.com/yuki-zirushi)</td>
   </tr>
 </tabel>
