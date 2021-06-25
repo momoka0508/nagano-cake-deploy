@@ -48,3 +48,20 @@
   transform: translateY(-10px);
   transition-duration: 0.5s;
 }
+
+// 商品一覧のhover //
+.img-wrap{
+  width: 250px;
+  height: 200spx;
+  margin: 20px auto 0;
+  transition-duration: 0.5s;
+}
+.img-wrap img{
+  width: 100%;
+  cursor: pointer;
+}
+.img-wrap:hover{
+  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
