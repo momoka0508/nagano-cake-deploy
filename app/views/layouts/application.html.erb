@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
   <body>
@@ -21,10 +23,10 @@
 
     <%= yield %>
 
-    <footer class="footer text-white bg-dark fixed-bottom">
+    <footer class="footer text-white fixed-bottom p-2" style="background-color: #A52A2A;">
       <div class="row">
         <div class="offset-8 mt-3">
-          <p>©CopyRight TyanTyans.inc</p>
+          <p>© TyanTyans.inc</p>
         </div>
       </div>
     </footer>
