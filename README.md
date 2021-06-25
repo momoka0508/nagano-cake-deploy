@@ -103,7 +103,7 @@ $ rails s
 # 設計書
 ER図
 <details>
-<summary><font color="lue">ここを押してね</font></summary>
+<summary><font color="Blue">ここを押してね</font></summary>
 
 ![ER図](https://user-images.githubusercontent.com/82991184/123381851-39851600-d5cc-11eb-85d9-cceed10fbb98.jpg)
 
