@@ -179,9 +179,9 @@ ER図
   <tr>
     <td align="center">
       <a href="https://github.com/yuki-zirushi">
-        <img width="80" src="https://user-images.githubusercontent.com/81721112/123467958-17bb7b80-d62c-11eb-9dc9-a637deba70d3.png"><br>
+        <img width="80" src="https://user-images.githubusercontent.com/81721112/123467958-17bb7b80-d62c-11eb-9dc9-a637deba70d3.png"></a><br>
         あいちゃん<br>
-        [yuki-zirushi](https://github.com/yuki-zirushi)
+        <a href="https://github.com/yuki-zirushi">yuki-zirushi</a>
       </a>
     </td>
   </tr>
