@@ -87,6 +87,12 @@ $ rails s
 # 設計書
 
 # テスト用アカウント
+【管理者用アカウント；ログイン】
+* メールアドレス；admin@gmail.com
+* パスワード；tyantyans
+【顧客用アカウント；ログイン】
+* メールアドレス；user@gmail.com
+* パスワード；testtest
 
 # 追加 Gem
 * refile
