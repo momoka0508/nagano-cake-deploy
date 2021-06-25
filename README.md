@@ -1,4 +1,5 @@
 # Nagano Cake
+![Image](https://user-images.githubusercontent.com/82991184/123375367-97613000-d5c3-11eb-82d1-a40da58b4580.jpg)
 
 # 概要
 長野県にある小さな洋菓子店「ながのCAKE」の商品を通販するためのECサイト
