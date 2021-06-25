@@ -168,7 +168,9 @@ ER図
 
 # 参考サイト
 
-https://seleck.cc/630
+<br>
+https://qiita.com/Qiita/items/c686397e4a0f4f11683d
+<br>
 
 # 開発者
 チーム名 ちゃんちゃんず
