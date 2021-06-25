@@ -181,26 +181,26 @@ ER図
       <a href="https://github.com/M-Abe47">
         <img width="80" src="https://avatars.githubusercontent.com/u/83204334?v=4"></a><br>
         あべちゃん<br>
-        <a href="https://github.com/M-Abe47"></a>
+        <a href="https://github.com/M-Abe47">M-Abe47</a>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/yunikonchak23">
         <img width="80" src="https://avatars.githubusercontent.com/u/81778039?v=4"></a><br>
         うえちゃん<br>
-        <a href="https://github.com/yunikonchak23"></a>
+        <a href="https://github.com/yunikonchak23">yunikonchak23</a>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/momoka0508">
         <img width="80" src="https://avatars.githubusercontent.com/u/82991184?v=4"></a><br>
         ももちゃん<br>
-        <a href="https://github.com/momoka0508"></a>
+        <a href="https://github.com/momoka0508">momoka0508</a>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/yuki-zirushi">
-        <img width="80" src="https://user-images.githubusercontent.com/81721112/123467958-17bb7b80-d62c-11eb-9dc9-a637deba70d3.png"></a><br>
+        <img width="80" src="https://github.com/yuki-zirushi"></a><br>
         あいちゃん<br>
         <a href="https://github.com/yuki-zirushi">yuki-zirushi</a>
       </a>
