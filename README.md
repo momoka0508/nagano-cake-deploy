@@ -109,6 +109,7 @@ ER図
 
 </details>
 テーブル定義書
+
 <details>
 <summary>ここを押してね</summary>
 
@@ -118,8 +119,10 @@ ER図
 
 </details>
 アプリケーション詳細設計
+
 <details>
 <summary>ここを押してね</summary>
+
 ![アプリケーション詳細設計](https://user-images.githubusercontent.com/82991184/123382386-dba4fe00-d5cc-11eb-8cbf-124ec0e8cd74.jpg)
 
 </details>
