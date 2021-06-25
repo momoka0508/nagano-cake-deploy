@@ -103,6 +103,7 @@ $ rails s
 # 設計書
 ER図
 <details>
+<summary>ここを押してね</summary>
 
 ![ER図](https://user-images.githubusercontent.com/82991184/123381851-39851600-d5cc-11eb-85d9-cceed10fbb98.jpg)
 
@@ -119,6 +120,7 @@ ER図
 <details>
 
 ![アプリケーション詳細設計](https://user-images.githubusercontent.com/82991184/123382386-dba4fe00-d5cc-11eb-8cbf-124ec0e8cd74.jpg)
+
 </details>
 
 # テスト用アカウント
