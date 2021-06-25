@@ -1,7 +1,7 @@
 class Admin::OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    @orders = Order.page(params[:page]).per(8)
   end
 
   def current_user_order
