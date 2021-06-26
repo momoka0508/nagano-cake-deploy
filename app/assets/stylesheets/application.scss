@@ -156,6 +156,13 @@ body {
     border:1px solid #000044;
 }
 
+@media (min-width: 992px){
+.navbar-search {
+    display: block !important;
+    flex-basis: auto;
+}
+}
+
 .pagination > li > a{
   color : #000044;
 }
