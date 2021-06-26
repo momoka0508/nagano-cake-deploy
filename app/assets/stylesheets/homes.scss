@@ -4,19 +4,19 @@
 
 /*　スライド背景画像設定　*/
 .image1 {
-  background-image: image-url('cake1.jpg');
+  background-image: image-url('/top/cake1.jpg');
 }
 
 .image2 {
-  background-image: image-url('cake2.jpg');
+  background-image: image-url('/top/cake2.jpg');
 }
 
 .image3 {
-  background-image: image-url('cake3.jpg');
+  background-image: image-url('/top/cake3.jpg');
 }
 
 .image4 {
-  background-image: image-url('cake4.jpg');
+  background-image: image-url('/top/cake4.jpg');
 }
 
 .image_box {
@@ -28,12 +28,12 @@
   height: 450px;
 }
 
-.item-box{
+.item-box {
   width: 25%;
   height: 150px;
 }
 
-.image-link{
+.image-link {
   border: 1px solid #ddd;
   width: 300px;
   height: 226px;
@@ -43,25 +43,101 @@
   cursor: pointer;
 }
 
-.image-link:hover{
+.image-link:hover {
   box-shadow: 20px 20px 20px rgba(0,0,0,0.9);
   transform: translateY(-10px);
   transition-duration: 0.5s;
 }
 
 // 商品一覧のhover //
-.img-wrap{
+.img-wrap {
   width: 250px;
   height: 200spx;
   margin: 20px auto 0;
   transition-duration: 0.5s;
 }
-.img-wrap img{
+.img-wrap img {
   width: 100%;
   cursor: pointer;
 }
-.img-wrap:hover{
+.img-wrap:hover {
   box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
   transform: translateY(-10px);
   transition-duration: 0.5s;
+}
+
+
+// Aboutページ //
+
+header h1 {
+  padding: 50px;
+  font-size: 70px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  white-space: nowrap;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.contents li {
+  position: relative;
+}
+
+.contents li:not(:first-of-type) {
+  margin-top: 200px;
+}
+
+.contents li:nth-of-type(odd) .contentsText {
+  right: 0;
+}
+
+.contents li:nth-of-type(even) .contentsText {
+  align-items: flex-start;
+}
+
+.contents li:nth-of-type(even) img {
+  margin-left: auto;
+}
+
+.contentsText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 40px;
+}
+
+.contents h2 {
+  color: #FAEBD7;
+  font-size: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: rgba(128,0,0,0.8);
+  padding: 10px 20px;
+  line-height: 1.4;
+  letter-spacing: 0.5em;
+  border-radius: 5px;
+}
+
+.contents p {
+  line-height: 1.6;
+  font-size: 14px;
+  max-width: 340px;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+.contents img {
+  width: 65%;
+  display: block;
+  border-radius: 5px;
 }

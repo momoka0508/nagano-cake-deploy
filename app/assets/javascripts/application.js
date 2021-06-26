@@ -46,3 +46,5 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
+// Aboutページ //
