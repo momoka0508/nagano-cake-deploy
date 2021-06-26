@@ -7,6 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Admin.create!(
-  email: 'test@test.com',
+  email: 'admin@gmail.com',
   password: 'tyantyans'
+  )
+
+Customer.create!(
+  email: 'user@gmail.com',
+  password: 'testtest',
+  last_name: 'ちゃん',
+  first_name: 'ちゃん',
+  last_name_kana: 'チャン',
+  first_name_kana: 'チャン',
+  zip_code: '777',
+  address: '東京都',
+  phone_number: '777'
   )
