@@ -1,7 +1,7 @@
 <div class="container my-5">
   <%= render "shared/flash_message" %>
   <div class="row">
-    <h3 class="order-text">
+    <h3 class="page_title">
       ジャンル一覧
     </h3>
     <div class="ml-md-5">
@@ -28,6 +28,6 @@
         <% end %>
       </tbody>
     </table>
-    <div class="pagination"><%= paginate @types %></div>
   </div>
+  <div class="pagination"><%= paginate @types, theme: 'twitter-bootstrap-4' %></div>
 </div>

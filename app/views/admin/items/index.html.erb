@@ -1,7 +1,7 @@
 <div class="container my-5">
   <%= render "shared/flash_message" %>
   <div class="row">
-    <h1>
+    <h1 class="page_title">
       商品一覧
     </h1>
   </div>
@@ -18,7 +18,7 @@
           <th>ステータス</th>
         </tr>
       </thead>
-      
+
       <tbody>
         <% @items.each do |item| %>
           <tr>
@@ -44,5 +44,6 @@
         <% end %>
       </tbody>
     </table>
+    <div class="pagination"><%= paginate @items, theme: 'twitter-bootstrap-4' %></div>
   </div>
 </div>
