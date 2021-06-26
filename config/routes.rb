@@ -1,9 +1,10 @@
-
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to:'homes#top'
   get '/home/about' => 'homes#about'
+
+  get '/search' => 'search#search'
 
   scope module: 'public' do
 
@@ -21,12 +22,11 @@
     resources :addresses
 
     post "orders/thanks" => "orders#thanks"
-
     get "orders/complete" => "orders#complete"
     resources :orders, only:[:new, :create, :index, :show]
     resources :cart_items, only:[:index, :update, :create, :destroy]
-    resources :items, only:[:index, :show]
     delete "cart_items" => "cart_items#destroy_all"
+    resources :items, only:[:index, :show]
   end
 
   devise_for :admins, only: [:sessions], :controllers => {
