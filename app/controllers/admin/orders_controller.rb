@@ -18,6 +18,7 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
+    flash[:notice] = "注文ステータスを変更しました"
     #注文ステータスを「入金確認」にすると全ての製作ステータスが「製作待ち」に自動更新
     #→→ orderモデルに記載
     redirect_back(fallback_location: root_path)
