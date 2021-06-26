@@ -4,19 +4,19 @@
 
 /*　スライド背景画像設定　*/
 .image1 {
-  background-image: image-url('/top/cake1.jpg');
+  background-image: url(asset_path('top/cake1.jpg'));
 }
 
 .image2 {
-  background-image: image-url('/top/cake2.jpg');
+  background-image: url(asset_path('top/cake2.jpg'));
 }
 
 .image3 {
-  background-image: image-url('/top/cake3.jpg');
+  background-image: url(asset_path('top/cake3.jpg'));
 }
 
 .image4 {
-  background-image: image-url('/top/cake4.jpg');
+  background-image: url(asset_path('top/cake4.jpg'));
 }
 
 .image_box {
@@ -25,7 +25,7 @@
 
 // 商品のhoverアクション //
 .main-box {
-  height: 450px;
+  margin-bottom: 350px;
 }
 
 .item-box {
@@ -69,12 +69,20 @@
 
 // Aboutページ //
 
+@keyframes titleAnimation {
+  0% {
+    letter-spacing: 0.3em;
+    opacity: 0;
+  }
+}
+
 header h1 {
   padding: 50px;
   font-size: 70px;
   font-weight: bold;
   margin-bottom: 60px;
   white-space: nowrap;
+  animation: titleAnimation 1.5s;
 }
 
 main {
@@ -89,10 +97,29 @@ ul {
 
 .contents li {
   position: relative;
+  // opacity: 0;
+  // transform: translateY(50px);
+  // transition: opacity 3s;
+}
+
+// .contents li.view {
+//   opacity: 1;
+//   transform: none;
+// }
+
+.contents li.view h2,
+.contents li.view p,
+main .contents li.view img {
+  transform: none;
+  opacity: 1;
 }
 
 .contents li:not(:first-of-type) {
   margin-top: 200px;
+}
+
+.contents li:last-of-type {
+  margin-bottom: 200px;
 }
 
 .contents li:nth-of-type(odd) .contentsText {
@@ -103,10 +130,14 @@ ul {
   align-items: flex-start;
 }
 
-.contents li:nth-of-type(even) img {
-  margin-left: auto;
+.contents li:nth-of-type(odd) img {
+  transform: translate(20px, 20px);
 }
 
+.contents li:nth-of-type(even) img {
+  margin-left: auto;
+  transform: translate(20px, 20px);
+}
 .contentsText {
   display: flex;
   flex-direction: column;
@@ -118,13 +149,15 @@ ul {
 .contents h2 {
   color: #FAEBD7;
   font-size: 50px;
-  font-weight: bold;
   white-space: nowrap;
-  background-color: rgba(128,0,0,0.8);
+  background-color: rgba(128,0,0,0.7);
   padding: 10px 20px;
   line-height: 1.4;
-  letter-spacing: 0.5em;
+  letter-spacing: 0.2em;
   border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 3s;
 }
 
 .contents p {
@@ -134,10 +167,17 @@ ul {
   padding: 15px;
   margin-top: 30px;
   border-radius: 5px;
+  background-color: rgba(203,164,89,0.4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 3s;
 }
 
 .contents img {
   width: 65%;
   display: block;
   border-radius: 5px;
+  opacity: 0;
+  transition: 3s 0.5s;
+
 }

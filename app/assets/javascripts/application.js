@@ -22,8 +22,9 @@
 //= require_tree .
 /*global $*/
 
+// Topページ //
 $(document).ready(function () {
-  $("#images").skippr({
+  $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
     transition : 'slide',
     // 変化に係る時間(ミリ秒)
@@ -48,3 +49,20 @@ $(document).ready(function () {
 });
 
 // Aboutページ //
+$(function () {
+  $(window).scroll(function () {
+    $('.animationTarget').each(function () {
+      //ターゲットの位置を取得
+      const targetElement = $(this).offset().top;
+      //スクロール量を取得
+      const scroll = $(window).scrollTop()
+      //ウィンドウの高さを取得
+      const windowHeight = $(window).height();
+      //ターゲットまでスクロールするとフェードインする
+      if (scroll - 250 > targetElement - windowHeight) {
+        //クラスを付与
+        $(this).addClass('view');
+      }
+    });
+  });
+});
