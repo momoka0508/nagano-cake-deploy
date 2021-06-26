@@ -5,6 +5,8 @@
   root to:'homes#top'
   get '/home/about' => 'homes#about'
 
+  get '/search' => 'search#search'
+
   scope module: 'public' do
 
     #onlyでアクションを指定してやらないとユーザー登録・ログイン時にcustomersコントローラーが呼び出されてしまう
