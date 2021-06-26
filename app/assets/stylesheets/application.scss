@@ -130,4 +130,15 @@ body {
 }
 .table > tbody > tr > td{
     border:1px solid #000044;
+}
 
+.pagination > li > a{
+  color : #000044;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: white;
+    background-color: #000044;
+    border-color: #000044;
+}
