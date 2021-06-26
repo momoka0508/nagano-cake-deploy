@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="mt-5 col-md-6 mx-auto">
-      <%= attachment_image_tag @item, :image, :fill, 300, 300, fallback: "no_image.jpg", size: "300x300", class:"border" %>
+    <div class="mt-5 col-md-6">
+    <%= attachment_image_tag @item, :image, :fill, 400, 300, fallback: "no_image.jpg", size: "400x300", class:"border" %>
     </div>
     <div class="mt-5 col-md-6">
-      <h3><%= @item.name %></h3>
-      <p><%= @item.body %></p>
-      <p>¥ <%= (@item.price.to_i * 1.1).floor.to_s(:delimited) %>（税込）</p>
+      <h4 class="text item-text"><%= @item.name %></h4>
+      <p class="mt-5 text"><%= @item.body %></p>
+      <p class="mb-5 text">¥ <%= (@item.price.to_i * 1.1).floor.to_s(:delimited) %>（税込）</p>
       <% if customer_signed_in? %>
         <%= form_with model: @cart_item, url: cart_items_path, method: :POST, local: true do |f| %>
         	<%= f.select :quantity, [[1,1],[2,2],[3,3],[4,4],[5,5]], include_blank: "個数選択" %>
-          <%= f.submit "カートに入れる", class: "btn btn-success" %>
+          <%= f.submit "Add to Cart", class: "btn btn-success" %>
           <%= f.hidden_field :customer_id, :value => current_customer.id %>
         　<%= f.hidden_field :item_id, :value => @item.id %>
         <% end %>

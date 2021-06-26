@@ -1,12 +1,12 @@
 <div class="container my-5">
   <%= render "shared/flash_message" %>
   <div class="row">
-    <h3 class="page_title">
-      ジャンル一覧
+    <h3 class="text title-text">
+      Genre List...
     </h3>
-    <div class="ml-md-5">
+    <div class="ml-md-5 light-text">
       <%= form_with model:@type, url: admin_types_path, local:true do |f| %>
-        <label>ジャンル名</label>
+        <label class="text">ジャンル名</label>
         <%= f.text_field :name %>
         <%= f.submit '新規登録', class: "btn btn-success btn-sm" %>
       <% end %>
@@ -14,14 +14,14 @@
   </div>
 
   <div class="row mt-5">
-    <table class="table table-striped col-md-4 border">
-      <thead>
+    <table class="table col-md-4 border">
+      <thead class="table-active text">
         <th>ジャンル</th>
         <th></th>
       </thead>
       <tbody>
         <% @types.each do |type| %>
-          <tr>
+          <tr class="light-text">
             <td><%= type.name %></td>
             <td><%= link_to "編集する", edit_admin_type_path(type.id), class: "btn btn-success" %></td>
           </tr>

@@ -4,7 +4,7 @@
 
   <div class="row">
     <div class="offset-1 col-3 text-center">
-      <h3 class="page_title">
+      <h3 class="title-sub-text text">
         注文履歴詳細
       </h3>
     </div>
@@ -17,30 +17,30 @@
 
         <tbody>
           <tr>
-            <td>購入者</td>
-            <td>
+            <td class="table-active text">購入者</td>
+            <td class="light-text">
               <%= link_to @order.name, admin_customer_path(@order.customer), class: "text-dark" %>
             </td>
           </tr>
           <tr>
-            <td>注文日</td>
-            <td><%= @order.created_at.strftime('%Y年/%m月/%d日') %></td>
+            <td class="table-active text">注文日</td>
+            <td class="light-text"><%= @order.created_at.strftime('%Y年/%m月/%d日') %></td>
           </tr>
           <tr>
-            <td>配送先</td>
-            <td>
+            <td class="table-active text">配送先</td>
+            <td class="light-text">
               〒<%= @order.zip_code %><br>
                 <%= @order.address %><br>
                 <%= @order.name %> 様
             </td>
           </tr>
           <tr>
-            <td>支払方法</td>
-            <td><%= @order.pay_method %></td>
+            <td class="table-active text">支払方法</td>
+            <td class="light-text"><%= @order.pay_method %></td>
           </tr>
           <tr>
-            <td>注文ステータス</td>
-            <td>
+            <td class="table-active text">注文ステータス</td>
+            <td class="light-text">
               <%= form_with model: @order, url: admin_order_path(@order), local: true,method: :patch do |f| %>
                 <%= f.select :order_status, [["入金待ち", "入金待ち"], ["入金確認","入金確認"],["製作中","製作中"],["発送準備中","発送準備中"],["発送済み","発送済み"]], class: "form-control" %>
                 <%= f.submit "更新", class: "btn btn-primary btn-sm" %>
@@ -58,18 +58,17 @@
 
       <table class="table table-borderless table-hover">
         <thead class="table-active">
-          <tr>
+          <tr class="text">
             <th>商品名</th>
             <th>単価(税込)</th>
             <th>個数</th>
             <th>小計</th>
             <th>制作ステータス</th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
           <% @order.order_items.each do |order_item| %>
-          <tr>
+          <tr class="light-text">
             <td><%= order_item.item.name %></td>
             <td><%= order_item.tax_price %></td>
             <td><%= order_item.quantity %></td>
@@ -90,18 +89,18 @@
       <table class="table table-borderless">
         <tbody>
           <tr>
-            <td>商品合計</td>
-            <td>
+            <td class="table-active text">商品合計</td>
+            <td class="light-text">
               <%= @order.total_money - @order.fare %>
             </td>
           </tr>
           <tr>
-            <td>送料</td>
-            <td><%= @order.fare %></td>
+            <td class="table-active text">送料</td>
+            <td class="light-text"><%= @order.fare %></td>
           </tr>
           <tr>
-            <td>請求合計金額</td>
-            <td><%= @order.total_money %></td>
+            <td class="table-active text">請求合計金額</td>
+            <td class="light-text"><%= @order.total_money %></td>
           </tr>
         </tbody>
       </table>

@@ -1,3 +1,4 @@
+
 <div class="container my-5">
 
 	<div class="row">
@@ -58,6 +59,7 @@
 				〒<%= @order.zip_code %>　<%= @order.address %></br>
 				　<%= @order.name %></br>
 
+
 			<%= form_with model: @order, url: orders_path, method: :POST, local: true do |f| %>
 				<%= f.hidden_field :customer_id, :value => current_customer.id %>
 				<%= f.hidden_field :pay_method, :value => @order.pay_method %>
@@ -67,3 +69,4 @@
 				<%= f.hidden_field :name, :value => @order.name %>
 				<%= f.submit "購入を確定する", class: "btn btn-lg btn-danger ml-auto" %>
 			<% end %>
+

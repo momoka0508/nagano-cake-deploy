@@ -1,15 +1,13 @@
 <div class="container my-5">
 
   <div class="row">
-  	<div class = "offset-1 col-3 text-center">
-    	<h3 class="page_title">
-	  		注文情報入力
-			</h3>
-		</div>
+    <h3 class="order-text text">
+	  注文情報入力
+	</h3>
   </div>
 
   <div class="row">
-	<div class="col-md-6 mx-auto">
+	<div class="col-md-6 mx-auto text">
     <%= form_with model: @order, url: orders_thanks_path, method: :POST, local: true do |f| %>
 	    <%= f.hidden_field :customer_id, :value => current_customer.id %>
 
