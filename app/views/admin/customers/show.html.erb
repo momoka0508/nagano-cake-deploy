@@ -3,13 +3,12 @@
   <%= render "shared/flash_message" %>
 
   <div class="row mb-5">
-
-    <div class="col-12">
-
+    <div class="offset-1">
       <h2 class="my-4 text title-sub-text">
-        <%= @customer.last_name + @customer.first_name %>さんの会員詳細
+        <%= @customer.last_name + @customer.first_name %>s Details...
       </h2>
-
+    </div>
+    <div class="col-12">
       <table class="table table-borderless">
         <tr>
           <th class="w-25 text">会員ID</th>
