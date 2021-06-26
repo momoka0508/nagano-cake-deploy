@@ -9,12 +9,14 @@
 
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto" >
-        <li><%= link_to " About",home_about_path,class: "nav-link fas fa-question-circle header_icon"%></li>
-        <li><%= link_to " Items",items_path,class: "nav-link fas fa-birthday-cake header_icon" %></li>
-        <li><%= link_to " Sign up",new_customer_registration_path,class: "nav-link fas fa-users header_icon" %></li>
-        <li><%= link_to " Log in",new_customer_session_path,class: "nav-link fas fa-sign-in-alt header_icon" %></li>
+        <li><%= link_to " About",home_about_path,class: "nav-link header_icon"%></li>
+        <li><%= link_to " Items",items_path,class: "nav-link header_icon" %></li>
+        <li><%= link_to " Sign up",new_customer_registration_path,class: "nav-link header_icon" %></li>
+        <li><%= link_to " Log in",new_customer_session_path,class: "nav-link header_icon" %></li>
       </ul>
     </div>
+
+    <%= render 'layouts/search' %>
 
   </div>
 </nav>

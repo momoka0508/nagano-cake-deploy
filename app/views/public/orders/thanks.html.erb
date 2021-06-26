@@ -1,16 +1,17 @@
+
 <div class="container my-5">
 
 	<div class="row">
   	<div class = "offset-1 col-3 text-center">
-			<h3 class="order-text">
+			<h3 class="page_title">
 				注文情報確認
 			</h3>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-4 mx-auto">
-			<table class="table table-bordered table-hover">
+		<div class="col-8 mx-auto">
+			<table class="table table-bordered">
 				<thead class = "table-active">
 					<tr>
 						<th>商品名</th>
@@ -20,9 +21,9 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
 					<% set_price = 0 %>
 					<% @cart_items.each do |cart_item| %>
+					<tr>
 						<td><%= cart_item.item.name %></td>
 						<td><%= cart_item.tax_price %></td>
 						<td><%= cart_item.quantity %></td>
@@ -35,24 +36,29 @@
 		</div>
 
 		<div class="col-4 mx-auto">
-			<table class="table table-bordered table-hover">
+			<table class="table table-bordered">
 				<thead class = "table-active">
-					<th>送料</th>
-					<td><%= @order.fare %></td>
-					<th>商品合計</th>
-					<td><%= set_price %></td>
-					<th>請求金額</th>
-					<td><%= @order.fare + set_price %></td>
+					<tr>
+						<th>送料</th>
+						<th>商品合計</th>
+						<th>請求金額</th>
+					</tr>
 				</thead>
+				<tbody>
+					<td><%= @order.fare %></td>
+					<td><%= set_price %></td>
+					<td><%= @order.fare + set_price %></td>
+				</tbody>
 			</table>
 		</div>
 	</div>
 
-			<h4>支払い方法</h4>
+			<h4><支払い方法></h4>
 				<%= @order.pay_method %>
-			<h4>お届け先</h4>
+			<h4><お届け先></h4>
 				〒<%= @order.zip_code %>　<%= @order.address %></br>
 				　<%= @order.name %></br>
+
 
 			<%= form_with model: @order, url: orders_path, method: :POST, local: true do |f| %>
 				<%= f.hidden_field :customer_id, :value => current_customer.id %>
@@ -63,3 +69,4 @@
 				<%= f.hidden_field :name, :value => @order.name %>
 				<%= f.submit "購入を確定する", class: "btn btn-lg btn-danger ml-auto" %>
 			<% end %>
+

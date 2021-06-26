@@ -1,26 +1,24 @@
 <div class="container my-5">
 
   <div class="row">
-  	<div class = "offset-1 col-3 text-center">
-    	<h3 class="order-text">
-	  		注文情報入力
-			</h3>
-		</div>
+    <h3 class="order-text text">
+	  注文情報入力
+	</h3>
   </div>
 
   <div class="row">
-	<div class="col-md-6 mx-auto">
+	<div class="col-md-6 mx-auto text">
     <%= form_with model: @order, url: orders_thanks_path, method: :POST, local: true do |f| %>
 	    <%= f.hidden_field :customer_id, :value => current_customer.id %>
 
-			<h4>支払い方法</h4>
+			<h4><支払い方法></h4>
 
 			<%= f.radio_button :pay_method, :クレジットカード, checked: true %>
 			<%= f.label :pay_method, "クレジットカード" %>
 			<%= f.radio_button :pay_method, :銀行振込 %>
 			<%= f.label :pay_method, "銀行振込" %>
 
-			<h4>お届け先</h
+			<h4><お届け先></h4>
 
 			<div class="form-check">
 				<input class="form_check_input" type="radio" name="order_address" id="customer_address" value="option1" checked>
@@ -28,7 +26,7 @@
 					ご自身の住所
 				</label></br>
 				〒<%= current_customer.zip_code %>　<%= current_customer.address %></br>
-				<%= current_customer.last_name %><%= current_customer.first_name %>
+				　　　　　　<%= current_customer.last_name %><%= current_customer.first_name %>
 			</div>
 
 			<div class="form-check">

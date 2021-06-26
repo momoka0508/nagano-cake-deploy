@@ -1,32 +1,32 @@
 <div class="container">
-  
+
   <%= render "shared/flash_message" %>
 
   <div class="row mb-5">
 
     <div class="col-10 mx-auto">
 
-      <h2 class="my-4">管理者ログイン</h2>
+      <h2 class="my-5 text title-text">~管理者Log in~</h2>
 
       <%= form_with model: @admin, url: admin_session_path do |f| %>
 
-        <div class="form-group row">
-          <%= f.label :email, "メールアドレス", class: "col-3 offset-2 col-form-label" %>
-          <div class="col-5">
+        <div class="form-group row text">
+          <%= f.label :email, "E-mail", class: "col-3 offset-2 col-form-label" %>
+          <div class="col-5 light-text">
             <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "form-control" %>
           </div>
         </div>
 
-        <div class="form-group row">
-          <%= f.label :password, "パスワード", class: "col-3 offset-2 col-form-label" %>
-          <div class="col-5">
+        <div class="form-group row text">
+          <%= f.label :password, "Password", class: "col-3 offset-2 col-form-label" %>
+          <div class="col-5 light-text">
             <%= f.password_field :password, autocomplete: "current_password", class: "form-control" %>
           </div>
         </div>
 
         <div class="form-group row mt-4">
-          <div class="col-2 offset-5 mt-2">
-            <%= f.submit "ログイン", class: "btn btn-primary w-100" %>
+          <div class="col-2 offset-5 mt-2 text">
+            <%= f.submit "Log in", class: "btn btn-primary w-100" %>
           </div>
         </div>
 

@@ -2,10 +2,10 @@
   <div>
   <%= render "shared/form_error", model: @item %>
   </div>
-  
+
   <%= form_with model:@item, url: admin_items_path, local:true do |f| %>
     <%= render 'item_form', f: f %>
-    <div class="row mt-2">
+    <div class="row mt-2 text">
       <label class="col-md-2 mr-2"></label>
       <%= f.submit '新規登録', class:"col-md-2 btn btn-success" %>
     </div>
