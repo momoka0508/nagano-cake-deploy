@@ -54,6 +54,7 @@ gem "devise"
 
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 
 gem 'kaminari','~> 1.2.1'
 
@@ -66,3 +67,6 @@ gem 'will_paginate-bootstrap4'
 gem 'rails-i18n'
 
 gem 'font-awesome-sass', '~> 5.13'
+
+#kaminariのbootstrap利用
+gem 'bootstrap4-kaminari-views'

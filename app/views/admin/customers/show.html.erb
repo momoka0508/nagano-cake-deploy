@@ -3,45 +3,44 @@
   <%= render "shared/flash_message" %>
 
   <div class="row mb-5">
-
-    <div class="col-12">
-
-      <h2 class="my-4">
-        <%= @customer.last_name + @customer.first_name %>さんの会員詳細
+    <div class="offset-1">
+      <h2 class="my-4 text title-sub-text">
+        <%= @customer.last_name + @customer.first_name %>s Details...
       </h2>
-
+    </div>
+    <div class="col-12">
       <table class="table table-borderless">
         <tr>
-          <th class="w-25">会員ID</th>
-          <td><%= @customer.id %></td>
+          <th class="w-25 text">会員ID</th>
+          <td class="light-text"><%= @customer.id %></td>
         </tr>
         <tr>
-          <th>氏名</th>
-          <td><%= @customer.last_name + @customer.first_name %></td>
+          <th class="text">氏名</th>
+          <td class="light-text"><%= @customer.last_name + @customer.first_name %></td>
         </tr>
         <tr>
-          <th>フリガナ</th>
-          <td><%= @customer.last_name_kana + @customer.first_name_kana %></td>
+          <th class="text">フリガナ</th>
+          <td class="light-text"><%= @customer.last_name_kana + @customer.first_name_kana %></td>
         </tr>
         <tr>
-          <th>郵便番号</th>
-          <td><%= @customer.zip_code %></td>
+          <th class="text">郵便番号</th>
+          <td class="light-text"><%= @customer.zip_code %></td>
         </tr>
         <tr>
-          <th>住所</th>
-          <td><%= @customer.address %></td>
+          <th class="text">住所</th>
+          <td class="light-text"><%= @customer.address %></td>
         </tr>
         <tr>
-          <th>電話番号</th>
-          <td><%= @customer.phone_number %></td>
+          <th class="text">電話番号</th>
+          <td class="light-text"><%= @customer.phone_number %></td>
         </tr>
         <tr>
-          <th>メールアドレス</th>
-          <td><%= @customer.email %></td>
+          <th class="text">メールアドレス</th>
+          <td class="light-text"><%= @customer.email %></td>
         </tr>
         <tr>
-          <th>会員ステータス</th>
-          <td>
+          <th class="text">会員ステータス</th>
+          <td class="text">
             <% if @customer.is_deleted %>
               <span>退会</span>
             <% else %>
@@ -51,9 +50,9 @@
         </tr>
         <tr>
           <th></th>
-          <td>
-            <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: "btn btn-success mr-4" %>
-            <%= link_to "注文履歴一覧を見る", admin_path(@customer), class: "btn btn-primary ml-5" %>
+          <td class="text">
+            <%= link_to "Edit", edit_admin_customer_path(@customer.id), class: "btn btn-success mr-4 col-2" %>
+            <%= link_to "Order List", admin_path(@customer), class: "btn btn-primary ml-5 col-2" %>
           </td>
         </tr>
       </table>
