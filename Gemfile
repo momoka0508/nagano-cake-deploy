@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
@@ -28,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# 開発環境とテスト環境のみ対象
 group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
   gem 'byebug', platform: :mri
@@ -69,6 +69,7 @@ gem 'font-awesome-sass', '~> 5.13'
 #kaminariのbootstrap利用
 gem 'bootstrap4-kaminari-views'
 
+# 本番環境、Postgres DBが使える、Herokuで必要
 group :production do
   gem 'pg', '1.1.4'
 end
