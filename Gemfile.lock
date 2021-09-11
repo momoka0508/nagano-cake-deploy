@@ -140,6 +140,7 @@ GEM
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.1.4)
     popper_js (1.16.0)
     puma (3.12.6)
     racc (1.5.2)
@@ -269,6 +270,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari (~> 1.2.1)
   listen (~> 3.0.5)
+  pg (= 1.1.4)
   puma (~> 3.0)
   rails (~> 5.2.4)
   rails-i18n

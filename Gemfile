@@ -70,3 +70,7 @@ gem 'font-awesome-sass', '~> 5.13'
 
 #kaminariのbootstrap利用
 gem 'bootstrap4-kaminari-views'
+
+group :production do
+  gem 'pg', '1.1.4'
+end
